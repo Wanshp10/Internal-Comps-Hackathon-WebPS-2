@@ -1,0 +1,83 @@
+import express from "express";
+import cors from "cors";
+import helmet from "helmet";
+import morgan from "morgan";
+
+import taskRoutes from "./routes/taskRoutes.js";
+
+const app = express();
+
+// ------------------------------
+// Security
+// ------------------------------
+app.use(helmet());
+
+// ------------------------------
+// CORS
+// ------------------------------
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
+  })
+);
+
+// ------------------------------
+// Logging
+// ------------------------------
+app.use(morgan("dev"));
+
+// ------------------------------
+// Body Parsers
+// ------------------------------
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// ------------------------------
+// Root Route
+// ------------------------------
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "PSWB02 Municipal Bureaucracy Path Visualizer API",
+    version: "v1",
+  });
+});
+
+// ------------------------------
+// Health Check
+// ------------------------------
+app.get("/api/v1/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Backend is running",
+  });
+});
+
+// ------------------------------
+// API Routes
+// ------------------------------
+app.use("/api/v1/tasks", taskRoutes);
+
+// ------------------------------
+// 404 Handler
+// ------------------------------
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: "Route not found",
+  });
+});
+
+// ------------------------------
+// Global Error Handler
+// ------------------------------
+app.use((err, req, res, next) => {
+  console.error("Unhandled Error:", err);
+
+  res.status(err.statusCode || 500).json({
+    success: false,
+    message: err.message || "Internal Server Error",
+  });
+});
+
+export default app;
