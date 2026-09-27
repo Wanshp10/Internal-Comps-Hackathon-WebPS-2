@@ -1,0 +1,353 @@
+{
+  "task_id": "CASTE_CERTIFICATE",
+  "task_name": "Caste Certificate",
+  "category": "certificate",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Revenue and Forest Department",
+    "sub_department": "Revenue",
+    "designated_officer": "Sub-Divisional Officer / Deputy Collector",
+    "office_type": "Revenue Administration"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "fee": {
+      "amount": 40,
+      "currency": "INR"
+    },
+    "time_limit_days": 45,
+    "first_appellate_officer": "Additional Collector",
+    "second_appellate_officer": "Collector",
+    "timeline_note": "Current Aaple Sarkar service page shows 45 days. An older official listing/checklist also shows 21 days, so current service-page value is used."
+  },
+  "document_requirements": {
+    "proof_of_identity_any_one": [
+      "PAN Card",
+      "Passport",
+      "RSBY Card",
+      "MNREGA Job Card",
+      "Driver's License",
+      "Photo of Applicant",
+      "Identity card issued by Government or Semi-Government organisation"
+    ],
+    "proof_of_address_any_one": [
+      "Passport",
+      "Water Bill",
+      "Ration Card",
+      "Aadhaar Card",
+      "Voter ID Card",
+      "Telephone Bill",
+      "Driving License",
+      "Electricity Bill",
+      "Property Tax Receipt",
+      "Extracts of 7/12 and 8A / Rent Receipt"
+    ],
+    "other_documents_as_applicable": [
+      "Affidavit",
+      "8A Extract",
+      "7/12 Extract",
+      "Caste Validity",
+      "Copy of Khasara",
+      "Record of Rights",
+      "School Leaving Certificate",
+      "Caste Certificate of Father",
+      "Caste Certificate of Relative",
+      "Copy of Caste Validity of Brother",
+      "Resident Proof of Gram Panchayat",
+      "Resident Proof of Nagar Parishad",
+      "Gazette notification copy for name change, where applicable"
+    ]
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Register or log in to Aaple Sarkar",
+      "description": "Create an Aaple Sarkar account or log in to an existing account.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Aaple Sarkar",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Caste Certificate",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=2337",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Select Caste Certificate service",
+      "description": "Choose the Caste Certificate service under the Revenue Department.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Service",
+        "location_rule": "Maharashtra"
+      },
+      "prerequisites": [
+        "Aaple Sarkar login"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=2337"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Caste Certificate Required Documents",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=2337",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Prepare identity, address and caste-supporting documents",
+      "description": "Prepare at least one accepted identity proof, one accepted address proof and applicable caste-supporting evidence listed by the official service.",
+      "required_forms": [],
+      "required_documents": [
+        "Any one accepted Proof of Identity",
+        "Any one accepted Proof of Address",
+        "Applicable caste-supporting document(s)"
+      ],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Caste Certificate service selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Caste Certificate Required Documents",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=2337",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Fill and submit the application",
+      "description": "Complete the application and upload the required supporting documents through the official service.",
+      "required_forms": [],
+      "required_documents": [
+        "Identity proof",
+        "Address proof",
+        "Applicable caste-supporting documents"
+      ],
+      "fees": {
+        "amount": 40,
+        "currency": "INR",
+        "payment_method": [
+          "online portal"
+        ],
+        "notes": "Official Caste Certificate checklist specifies INR 40."
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Required documents prepared"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Caste Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees%2C%20Procedure%2C%20Checklist_Caste%20Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Department verification and processing",
+      "description": "The application is processed by the competent Revenue authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": "Sub-Divisional Officer / Deputy Collector",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": 45,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Caste Certificate",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=2337",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Receive and verify Caste Certificate",
+      "description": "After approval, receive the certificate and use the official portal's certificate-verification facility if required.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": "Sub-Divisional Officer / Deputy Collector",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application approved"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "certificate_issuance",
+          "certificate_verification"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Caste Certificate",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=2337",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "Official Maharashtra sources currently show conflicting 21-day and 45-day timelines. Current Aaple Sarkar service page shows 45 days and is used in this file."
+  }
+}

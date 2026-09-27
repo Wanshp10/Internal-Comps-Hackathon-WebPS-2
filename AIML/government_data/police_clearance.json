@@ -1,0 +1,386 @@
+{
+  "task_id": "POLICE_CLEARANCE",
+  "task_name": "Police Clearance Certificate",
+  "category": "police_service",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Maharashtra Police / Ministry of External Affairs",
+    "sub_department": null,
+    "designated_officer": null,
+    "office_type": "Police / Passport Authority"
+  },
+  "eligibility": [],
+  "service_branches": {
+    "maharashtra_police_pcc": {
+      "authority": "Maharashtra Police",
+      "purpose": "Local police clearance / certificate as applicable",
+      "online_status": "Do not assume online submission; Maharashtra Police citizen portal currently states online services will be launched soon."
+    },
+    "passport_seva_pcc": {
+      "authority": "Ministry of External Affairs, Government of India",
+      "purpose": [
+        "Residential status abroad",
+        "Employment abroad",
+        "Long-term visa",
+        "Immigration"
+      ],
+      "eligibility": [
+        "Applicant must hold a valid Indian passport"
+      ]
+    }
+  },
+  "official_forms": [
+    {
+      "form_name": "Maharashtra Police - Application Form for Police Clearance Certificate",
+      "source_url": "https://citizen.mahapolice.gov.in/Citizen/downloadPdf/03_Police%20Clearance%20Cerificate%20Form%20%28%20English%29.pdf"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify the purpose of Police Clearance",
+      "description": "Determine whether the certificate is required as a Maharashtra Police/local police service or as a Passport Seva PCC for residence, employment, long-term visa or immigration abroad.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee depends on the applicable service branch and is not assumed here."
+      },
+      "office": {
+        "department": "Maharashtra Police / Ministry of External Affairs",
+        "office_name": null,
+        "office_type": "Applicable PCC Authority",
+        "location_rule": "Depends on purpose"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2A",
+        "STEP_2B"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "branch_selection"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police Citizen Portal",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/",
+          "authority": "Maharashtra Police / NCRB",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Passport Seva - Police Clearance Certificate",
+          "source_url": "https://www.passportindia.gov.in/",
+          "authority": "Ministry of External Affairs, Government of India",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2A",
+      "title": "Maharashtra Police route - obtain the official PCC form",
+      "description": "Use the official Maharashtra Police Police Clearance Certificate application form.",
+      "required_forms": [
+        "Application Form for Police Clearance Certificate"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No fee inserted without an explicit current official fee source."
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Concerned Police Authority",
+        "location_rule": "Applicable Maharashtra Police jurisdiction"
+      },
+      "prerequisites": [
+        "Maharashtra Police PCC route selected"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3A"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "official_form"
+        ],
+        "application_link": "https://citizen.mahapolice.gov.in/Citizen/downloadPdf/03_Police%20Clearance%20Cerificate%20Form%20%28%20English%29.pdf"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police PCC Application Form",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/downloadPdf/03_Police%20Clearance%20Cerificate%20Form%20%28%20English%29.pdf",
+          "authority": "Maharashtra Police",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3A",
+      "title": "Fill personal and residence information",
+      "description": "Complete the information requested in the Maharashtra Police PCC form, including personal details, present/home address, residence history, family details, date of birth and place of birth.",
+      "required_forms": [
+        "Completed Maharashtra Police PCC Application Form"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Concerned Police Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Official PCC form obtained"
+      ],
+      "depends_on": [
+        "STEP_2A"
+      ],
+      "unlocks": [
+        "STEP_4A"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "form_completion"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police PCC Application Form",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/downloadPdf/03_Police%20Clearance%20Cerificate%20Form%20%28%20English%29.pdf",
+          "authority": "Maharashtra Police",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4A",
+      "title": "Submit through the applicable Maharashtra Police process",
+      "description": "Submit the completed application through the concerned Maharashtra Police authority/process. The current Maharashtra Police citizen portal should not be represented as a confirmed fully-online PCC submission service.",
+      "required_forms": [
+        "Completed PCC Application Form"
+      ],
+      "required_documents": [
+        "Supporting documents required by the concerned police authority"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No unsupported fee or document checklist inserted."
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Concerned Police Authority",
+        "location_rule": "Based on police jurisdiction"
+      },
+      "prerequisites": [
+        "PCC form completed"
+      ],
+      "depends_on": [
+        "STEP_3A"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "authority_submission"
+        ],
+        "application_link": "https://citizen.mahapolice.gov.in/Citizen/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police Citizen Portal",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/",
+          "authority": "Maharashtra Police / NCRB",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2B",
+      "title": "Passport PCC route - use Passport Seva",
+      "description": "Use the official Passport Seva service when PCC is required for residential status, employment, long-term visa or immigration abroad.",
+      "required_forms": [
+        "Police Clearance Certificate application"
+      ],
+      "required_documents": [
+        "Valid Indian passport"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee not inserted here without separately verifying the current Passport Seva fee schedule."
+      },
+      "office": {
+        "department": "Ministry of External Affairs",
+        "office_name": "Passport Seva",
+        "office_type": "Passport Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Valid Indian passport"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3B"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://www.passportindia.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Passport Seva",
+          "source_url": "https://www.passportindia.gov.in/",
+          "authority": "Ministry of External Affairs, Government of India",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3B",
+      "title": "Complete Passport Seva PCC processing",
+      "description": "Submit the PCC application through Passport Seva and complete the applicable appointment, document scrutiny and police-verification process.",
+      "required_forms": [
+        "PCC Application"
+      ],
+      "required_documents": [
+        "Documents required by the current Passport Seva PCC service"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Current fee/document details should be obtained directly from Passport Seva when this branch is selected."
+      },
+      "office": {
+        "department": "Ministry of External Affairs",
+        "office_name": "Passport Seva Kendra / Passport Office",
+        "office_type": "Passport Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Passport PCC application initiated"
+      ],
+      "depends_on": [
+        "STEP_2B"
+      ],
+      "unlocks": [
+        "STEP_4B"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "appointment"
+        ],
+        "application_link": "https://www.passportindia.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Passport Seva - PCC",
+          "source_url": "https://www.passportindia.gov.in/",
+          "authority": "Ministry of External Affairs, Government of India",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4B",
+      "title": "PCC issuance after clearance",
+      "description": "Passport PCC is issued subject to the Passport Authority's checks and a clear police verification report where applicable.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Ministry of External Affairs",
+        "office_name": "Passport Authority",
+        "office_type": "PCC Issuing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Required scrutiny and police verification completed"
+      ],
+      "depends_on": [
+        "STEP_3B"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "certificate_issuance"
+        ],
+        "application_link": "https://www.passportindia.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Passport Manual - Police Clearance Certificate",
+          "source_url": "https://passportindia.gov.in/AppOnlineProject/pdf/Latest_Passport_Manual_for_disclosure_under_RTI_Act.pdf",
+          "authority": "Ministry of External Affairs, Government of India",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}

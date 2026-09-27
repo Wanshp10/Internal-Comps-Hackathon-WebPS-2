@@ -1,0 +1,333 @@
+{
+  "task_id": "NON_CREAMY_LAYER_CERTIFICATE",
+  "task_name": "Non Creamy Layer Certificate",
+  "category": "certificate",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Revenue Department",
+    "sub_department": "Revenue",
+    "designated_officer": "Sub-Divisional Officer",
+    "office_type": "Revenue Administration"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "time_limit_days": 21,
+    "first_appellate_officer": "Additional Collector",
+    "second_appellate_officer": "Collector"
+  },
+  "document_requirements": {
+    "mandatory_documents": [
+      "Income Proof",
+      "Caste Certificate"
+    ],
+    "proof_of_identity_any_one": [
+      "PAN Card",
+      "Passport",
+      "Aadhaar Card",
+      "Voter ID Card",
+      "Driving License"
+    ],
+    "proof_of_address_any_one": [
+      "Passport",
+      "Water Bill",
+      "Ration Card",
+      "Aadhaar Card",
+      "Voter ID Card",
+      "Driving License",
+      "Electricity Bill",
+      "Property Tax Receipt",
+      "Extracts of 7/12 and 8A / Rent Receipt"
+    ]
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Register or log in to Aaple Sarkar",
+      "description": "Access the Aaple Sarkar portal using an existing account or create a profile.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Aaple Sarkar",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Non Creamy Layer",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=1286",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Select Non Creamy Layer Certificate service",
+      "description": "Choose the Non Creamy Layer Certificate service under the Revenue Department.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee not inserted because an exact official amount was not verified."
+      },
+      "office": {
+        "department": "Revenue Department",
+        "office_name": null,
+        "office_type": "Online Service",
+        "location_rule": "Maharashtra"
+      },
+      "prerequisites": [
+        "Aaple Sarkar login"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=1286"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Non Creamy Layer Certificate",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=1286",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Prepare mandatory and supporting documents",
+      "description": "Prepare the mandatory Income Proof and Caste Certificate along with one accepted identity proof and one accepted address proof.",
+      "required_forms": [],
+      "required_documents": [
+        "Income Proof",
+        "Caste Certificate",
+        "Any one accepted Proof of Identity",
+        "Any one accepted Proof of Address"
+      ],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Non Creamy Layer service selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Non Creamy Layer - Required Documents",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=1286",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Fill and submit the application",
+      "description": "Complete the online application and upload the required supporting documents.",
+      "required_forms": [],
+      "required_documents": [
+        "Income Proof",
+        "Caste Certificate",
+        "Identity Proof",
+        "Address Proof"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Exact official fee not verified."
+      },
+      "office": {
+        "department": "Revenue Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Required documents prepared"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Non Creamy Layer",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=1286",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Department verification and processing",
+      "description": "The competent Revenue authority processes the submitted application.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue Department",
+        "office_name": "Sub-Divisional Officer",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": 21,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Department Notified Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Receive and verify Non Creamy Layer Certificate",
+      "description": "After approval, receive the certificate. The Aaple Sarkar portal also provides authenticated-certificate verification using the certificate barcode.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue Department",
+        "office_name": "Sub-Divisional Officer",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application approved"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "certificate_issuance",
+          "certificate_verification"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Non Creamy Layer Certificate",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=1286",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}

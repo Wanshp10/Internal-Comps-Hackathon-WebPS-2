@@ -1,0 +1,364 @@
+{
+  "task_id": "TRADE_LICENCE",
+  "task_name": "New Trade Licence",
+  "category": "municipal_business_licence",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Applicable Urban Local Body / Municipal Authority",
+    "sub_department": "Licence Department",
+    "designated_officer": "Ward Assistant Commissioner",
+    "office_type": "Municipal Licensing Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "time_limit_days": 15,
+    "first_appellate_officer": "Zonal DMC",
+    "second_appellate_officer": "Concerned AMC",
+    "local_body_dependent": true,
+    "notes": "Exact documents and licence fees depend on the local body and nature of trade."
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify the competent municipal authority",
+      "description": "Identify the Municipal Corporation, Municipal Council or other Urban Local Body responsible for licensing the business location.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee depends on local body and trade category."
+      },
+      "office": {
+        "department": "Applicable Urban Local Body",
+        "office_name": null,
+        "office_type": "Municipal Licence Department",
+        "location_rule": "Based on business location"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": "https://mahadma.maharashtra.gov.in/en/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration - Trade Licence",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/faq/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Select New Trade Licence application",
+      "description": "Choose the new Trade Licence service of the competent Urban Local Body.",
+      "required_forms": [
+        "Applicable New Trade Licence application"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Applicable Urban Local Body",
+        "office_name": null,
+        "office_type": "Licence Department",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Competent municipal authority identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": "https://mahaulb.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/home/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Fill business and trade details",
+      "description": "Enter applicant, establishment, business-location and nature-of-trade details required by the local authority.",
+      "required_forms": [
+        "New Trade Licence application"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Municipal Licence Department",
+        "office_name": null,
+        "office_type": "Online Portal / Municipal Office",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Trade Licence service selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration FAQ",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/faq/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Provide local-body required documents",
+      "description": "Upload or submit the documents required by the competent Urban Local Body for the selected trade category.",
+      "required_forms": [],
+      "required_documents": [
+        "Documents specified by the competent Urban Local Body for the selected trade"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No universal document checklist is inserted."
+      },
+      "office": {
+        "department": "Municipal Licence Department",
+        "office_name": null,
+        "office_type": "Municipal Licensing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Business and trade details completed"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration FAQ",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/faq/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Pay applicable municipal licence fees and submit",
+      "description": "Pay the applicable licence charges determined by the local authority and submit the Trade Licence application.",
+      "required_forms": [
+        "Completed Trade Licence application"
+      ],
+      "required_documents": [
+        "Required local-body supporting documents"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [
+          "authority_dependent"
+        ],
+        "notes": "Amount depends on the Urban Local Body and trade category."
+      },
+      "office": {
+        "department": "Municipal Licence Department",
+        "office_name": "Ward Assistant Commissioner",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application completed",
+        "Required documents provided"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - New Licence Application (Trade Licence)",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=7121",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Municipal verification and processing",
+      "description": "The competent municipal authority verifies and processes the new Trade Licence application.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Municipal Licence Department",
+        "office_name": "Ward Assistant Commissioner",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Trade Licence application submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [
+        "STEP_7"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": 15,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - New Licence Application (Trade Licence)",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=7121",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_7",
+      "title": "Receive Trade Licence",
+      "description": "After approval and completion of applicable municipal requirements, the Trade Licence is issued by the competent local authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Municipal Licence Department",
+        "office_name": "Ward Assistant Commissioner",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application approved"
+      ],
+      "depends_on": [
+        "STEP_6"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "licence_issuance"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Trade Licence Service",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=7121",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "Exact fee and document requirements remain Urban-Local-Body and trade-category dependent."
+  }
+}
