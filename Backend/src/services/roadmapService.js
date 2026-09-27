@@ -1,6 +1,9 @@
 import CivicProcedure from "../models/CivicProcedure.js";
 import Roadmap from "../models/Roadmap.js";
 
+// ------------------------------------
+// Generate roadmap from a procedure
+// ------------------------------------
 const generateRoadmap = async ({
   procedureId,
   taskId,
@@ -16,18 +19,23 @@ const generateRoadmap = async ({
 
   const steps = procedure.steps.map((step) => {
     const hasDependencies =
-      step.depends_on &&
+      Array.isArray(step.depends_on) &&
       step.depends_on.length > 0;
 
     return {
       step_id: step.step_id,
-      title: step.title || "Untitled Step",
-      description: step.description || "",
+
+      title:
+        step.title?.trim() || "Untitled Step",
+
+      description:
+        step.description || "",
 
       department:
         procedure.department?.name || "",
 
-      office: step.office?.office_name || "",
+      office:
+        step.office?.office_name || "",
 
       required_forms:
         step.required_forms || [],
@@ -36,9 +44,12 @@ const generateRoadmap = async ({
         step.required_documents || [],
 
       fee: {
-        amount: step.fees?.amount ?? null,
+        amount:
+          step.fees?.amount ?? null,
+
         currency:
           step.fees?.currency || "INR",
+
         payment_method:
           step.fees?.payment_method || [],
       },
@@ -46,6 +57,7 @@ const generateRoadmap = async ({
       application: {
         mode:
           step.application?.mode || [],
+
         application_link:
           step.application?.application_link ||
           null,
@@ -53,6 +65,8 @@ const generateRoadmap = async ({
 
       eligibility:
         procedure.eligibility || [],
+
+      instructions: [],
 
       prerequisites:
         step.prerequisites || [],
@@ -72,20 +86,21 @@ const generateRoadmap = async ({
       official_sources:
         step.official_sources || [],
 
-      // Initial state
       status: hasDependencies
         ? "LOCKED"
         : "NOT_STARTED",
     };
   });
 
+  // ------------------------------------
   // Create dependency edges
+  // ------------------------------------
   const dependencies = [];
 
   for (const step of procedure.steps) {
-    if (!step.depends_on) continue;
+    const dependsOn = step.depends_on || [];
 
-    for (const dependency of step.depends_on) {
+    for (const dependency of dependsOn) {
       dependencies.push({
         from: dependency,
         to: step.step_id,
