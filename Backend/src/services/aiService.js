@@ -2,13 +2,21 @@ import axios from "axios";
 
 const analyzeTask = async (query) => {
   try {
+    const baseUrl = process.env.AIML_URL;
+    const endpoint =
+      process.env.AIML_ANALYZE_ENDPOINT || "/analyze";
+
+    if (!baseUrl) {
+      throw new Error("AIML_URL is not configured");
+    }
+
     const response = await axios.post(
-      `${process.env.AIML_URL}/analyze`,
+      `${baseUrl}${endpoint}`,
       {
         query,
       },
       {
-        timeout: 10000,
+        timeout: 15000,
       }
     );
 

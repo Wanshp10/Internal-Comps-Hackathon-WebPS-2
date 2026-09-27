@@ -4,48 +4,51 @@ import helmet from "helmet";
 import morgan from "morgan";
 
 import taskRoutes from "./routes/taskRoutes.js";
+import procedureRoutes from "./routes/procedureRoutes.js";
+import roadmapRoutes from "./routes/roadmapRoutes.js";
 
 const app = express();
 
-// ------------------------------
+// ------------------------------------
 // Security
-// ------------------------------
+// ------------------------------------
 app.use(helmet());
 
-// ------------------------------
+// ------------------------------------
 // CORS
-// ------------------------------
+// ------------------------------------
 app.use(
   cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173",
   })
 );
 
-// ------------------------------
-// Logging
-// ------------------------------
+// ------------------------------------
+// Request Logging
+// ------------------------------------
 app.use(morgan("dev"));
 
-// ------------------------------
-// Body Parsers
-// ------------------------------
+// ------------------------------------
+// Body Parsing
+// ------------------------------------
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ------------------------------
+// ------------------------------------
 // Root Route
-// ------------------------------
+// ------------------------------------
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
-    message: "PSWB02 Municipal Bureaucracy Path Visualizer API",
+    message:
+      "PSWB02 Municipal Bureaucracy Path Visualizer API",
     version: "v1",
   });
 });
 
-// ------------------------------
+// ------------------------------------
 // Health Check
-// ------------------------------
+// ------------------------------------
 app.get("/api/v1/health", (req, res) => {
   res.status(200).json({
     success: true,
@@ -53,14 +56,18 @@ app.get("/api/v1/health", (req, res) => {
   });
 });
 
-// ------------------------------
+// ------------------------------------
 // API Routes
-// ------------------------------
+// ------------------------------------
 app.use("/api/v1/tasks", taskRoutes);
 
-// ------------------------------
+app.use("/api/v1/procedures", procedureRoutes);
+
+app.use("/api/v1/roadmaps", roadmapRoutes);
+
+// ------------------------------------
 // 404 Handler
-// ------------------------------
+// ------------------------------------
 app.use((req, res) => {
   res.status(404).json({
     success: false,
@@ -68,15 +75,16 @@ app.use((req, res) => {
   });
 });
 
-// ------------------------------
+// ------------------------------------
 // Global Error Handler
-// ------------------------------
+// ------------------------------------
 app.use((err, req, res, next) => {
   console.error("Unhandled Error:", err);
 
   res.status(err.statusCode || 500).json({
     success: false,
-    message: err.message || "Internal Server Error",
+    message:
+      err.message || "Internal Server Error",
   });
 });
 
