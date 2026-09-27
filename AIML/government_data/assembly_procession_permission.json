@@ -1,0 +1,423 @@
+{
+  "task_id": "ASSEMBLY_PROCESSION_PERMISSION",
+  "task_name": "Permission for Peaceful Assembly and Procession",
+  "category": "police_permission",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Home Department / Maharashtra Police",
+    "sub_department": null,
+    "designated_officer": null,
+    "office_type": "Police Permission Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "time_limit_days": 7,
+    "jurisdiction_dependent": true,
+    "notes": "Officer hierarchy and document requirements vary depending on district/commissionerate jurisdiction and the exact application route."
+  },
+  "officer_routes": {
+    "district_police_setup": {
+      "designated_officer": [
+        "Station House Officer",
+        "Sub-Divisional Police Officer",
+        "Deputy Superintendent of Police (HQ)"
+      ],
+      "first_appellate_officer": [
+        "Sub-Divisional Police Officer",
+        "Additional Superintendent of Police"
+      ],
+      "second_appellate_officer": [
+        "Superintendent of Police"
+      ]
+    },
+    "commissionerate_setup": {
+      "designated_officer": [
+        "Station House Officer",
+        "Assistant Commissioner of Police",
+        "Assistant Commissioner of Police (HQ)"
+      ],
+      "first_appellate_officer": [
+        "Assistant Commissioner of Police",
+        "Deputy Commissioner of Police",
+        "Deputy Commissioner of Police (HQ)"
+      ],
+      "second_appellate_officer": [
+        "Additional Commissioner of Police",
+        "Joint Commissioner of Police"
+      ]
+    }
+  },
+  "official_forms": [
+    {
+      "form_name": "Procession Request Form",
+      "source_url": "https://citizen.mahapolice.gov.in/Citizen/DownloadOfflineEForm.aspx"
+    }
+  ],
+  "document_requirements": {
+    "source_conflict": true,
+    "aaple_sarkar_english_page": {
+      "documents": [],
+      "notes": "This official page displays 'No Documents Required'."
+    },
+    "aaple_sarkar_marathi_page": {
+      "proof_of_address": [
+        "Address Proof"
+      ],
+      "other_documents_any_one": [
+        "Covering Letter",
+        "Permission of last year for Activity/Procession"
+      ],
+      "mandatory_documents_listed": [
+        "Certificate about installation of Fire Extinguishers being in proper condition and updated",
+        "Certificate from Government Electrical Inspector or Government-approved private contractor regarding safety of electrical fittings"
+      ]
+    },
+    "implementation_rule": "Do not present the Marathi-page document list as universally mandatory without confirming which portal/jurisdictional workflow is being used."
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify assembly/procession type and police jurisdiction",
+      "description": "Identify whether the request is for a peaceful assembly, procession, rally or similar activity, and determine the police station / police jurisdiction responsible for the location or route.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No statewide fee is generalized here."
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Concerned Police Authority",
+        "location_rule": "Based on assembly venue or procession route"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "jurisdiction_identification"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Permission for Peaceful Assembly and Procession",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=3223",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Obtain the Procession / Assembly application",
+      "description": "Use the official Maharashtra Police procession request form or the applicable Aaple Sarkar service.",
+      "required_forms": [
+        "Procession Request Form / applicable online service form"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Police Station / Online Police Service",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Police jurisdiction identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline_form"
+        ],
+        "application_link": "https://citizen.mahapolice.gov.in/Citizen/DownloadOfflineEForm.aspx"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police - Download and Submit e-Form",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/DownloadOfflineEForm.aspx",
+          "authority": "Maharashtra Police",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Enter assembly or procession details",
+      "description": "Provide the details requested by the applicable police service, including the nature of the activity and relevant location/route information.",
+      "required_forms": [
+        "Completed assembly/procession permission application"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Concerned Police Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application form/service selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "form_completion"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Peaceful Assembly and Procession",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=3223",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Provide documents required by the applicable official workflow",
+      "description": "Provide only the documents requested by the actual portal/jurisdiction. Official Aaple Sarkar pages currently show inconsistent document requirements, so the system should not assume one universal checklist.",
+      "required_forms": [],
+      "required_documents": [
+        "Documents requested by the selected official service/jurisdiction"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No unsupported universal document or fee requirement is inserted."
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Concerned Police Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application details completed"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "document_submission"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - English Service Page",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=3223",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Aaple Sarkar - Marathi Service Page",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/mr/Login/Certificate_Documents?ServiceId=3223",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Submit the permission request",
+      "description": "Submit the completed peaceful assembly/procession permission request to the concerned police authority through the applicable official route.",
+      "required_forms": [
+        "Completed Procession / Assembly Permission application"
+      ],
+      "required_documents": [
+        "Applicable supporting documents requested by the official workflow"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "A local police-unit page may publish a specific fee, but this file does not generalize a local-unit amount statewide."
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Designated Police Authority",
+        "location_rule": "Based on police jurisdiction"
+      },
+      "prerequisites": [
+        "Application completed",
+        "Applicable documents prepared"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "police_submission"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=3223"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Permission for Peaceful Assembly and Procession",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=3223",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Police scrutiny and decision",
+      "description": "The concerned police authority examines the permission request and issues its decision within the notified service timeline.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Home Department / Maharashtra Police",
+        "office_name": "Applicable Designated Officer",
+        "office_type": "Police Permission Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Permission request submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [
+        "STEP_7"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "police_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": 7,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Home Department Notified Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/mr/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_7",
+      "title": "Receive assembly/procession permission",
+      "description": "If approved, receive the permission and conduct the assembly or procession subject to the conditions imposed by the competent police authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Permission Issuing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Permission approved"
+      ],
+      "depends_on": [
+        "STEP_6"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "permission_issuance"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Peaceful Assembly and Procession",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=3223",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "Current official Aaple Sarkar English and Marathi pages show inconsistent document requirements. The conflict is preserved rather than silently resolved."
+  }
+}

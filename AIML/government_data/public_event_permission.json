@@ -1,0 +1,455 @@
+{
+  "task_id": "PUBLIC_EVENT_PERMISSION",
+  "task_name": "Public Event Permission",
+  "category": "event_permission",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Home Department / Maharashtra Police / Applicable Local Authorities",
+    "sub_department": null,
+    "designated_officer": null,
+    "office_type": "Police / Event Licensing Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "event_specific": true,
+    "location_dependent": true,
+    "notes": "Permissions depend on event type, venue, use of loudspeaker, temporary structures, entertainment activity, ticketing and local jurisdiction."
+  },
+  "permission_routes": {
+    "loudspeaker": {
+      "service_name": "Loudspeaker Licence",
+      "time_limit_days": 3,
+      "designated_officer": "Police Station Officer",
+      "first_appellate_officer": "Sub Divisional Police Officer / Assistant Commissioner of Police",
+      "second_appellate_officer": "Additional Superintendent of Police / Deputy Commissioner of Police"
+    },
+    "entertainment_programme": {
+      "service_name": "NOC / Licence for Amusement or Entertainment Programme",
+      "time_limit_days": 21
+    },
+    "large_public_entertainment_event": {
+      "possible_permissions": [
+        "NOC for temporary structure/stage, if applicable",
+        "Ticket selling licence, if applicable",
+        "Premises licence, if applicable",
+        "Performance licence, if applicable",
+        "Loudspeaker licence, if applicable"
+      ]
+    }
+  },
+  "conditional_nocs": [
+    "Landlord NOC, where applicable",
+    "Traffic Police NOC, where applicable",
+    "Fire Brigade NOC, where applicable",
+    "Electrical Inspector NOC, where applicable",
+    "Health Department NOC if eatables are served, where applicable",
+    "Collector NOC where ticket selling or charity-show conditions require it",
+    "Rangabhumi Parinirikshan Mandal NOC where applicable",
+    "Machinery fitness certificate for amusement rides, where applicable"
+  ],
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify event type, venue and jurisdiction",
+      "description": "Identify the nature of the event, venue, expected activities and the police/local authority having jurisdiction.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Charges depend on the applicable permission route."
+      },
+      "office": {
+        "department": "Maharashtra Police / Applicable Local Authority",
+        "office_name": null,
+        "office_type": "Event Permission Authority",
+        "location_rule": "Based on event venue"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "information_collection"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police FAQ - Events and Performance",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/mh/faq.aspx",
+          "authority": "Maharashtra Police",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Determine which permissions apply",
+      "description": "Check whether the event requires a loudspeaker licence, amusement/entertainment permission, temporary-structure approval, ticket-selling permission, premises licence or performance licence.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Not every permission applies to every event."
+      },
+      "office": {
+        "department": "Maharashtra Police / Applicable Authority",
+        "office_name": null,
+        "office_type": "Permission Routing",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Event type and venue identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3A",
+        "STEP_3B",
+        "STEP_3C"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "rule_based_routing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police FAQ - Events and Performance",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/mh/faq.aspx",
+          "authority": "Maharashtra Police",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Aaple Sarkar - Home Department Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3A",
+      "title": "Apply for Loudspeaker Licence if applicable",
+      "description": "If amplified sound is planned, submit the loudspeaker licence application to the concerned police authority.",
+      "required_forms": [
+        "Official Loudspeaker Application Form"
+      ],
+      "required_documents": [
+        "Documents requested by the concerned police authority"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee may vary; Maharashtra Police FAQ says it is collected by the concerned Police Station."
+      },
+      "office": {
+        "department": "Home Department / Maharashtra Police",
+        "office_name": "Concerned Police Station",
+        "office_type": "Loudspeaker Licensing Authority",
+        "location_rule": "Police station having jurisdiction over venue"
+      },
+      "prerequisites": [
+        "Loudspeaker use is planned"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": true,
+      "application": {
+        "mode": [
+          "police_application"
+        ],
+        "application_link": "https://mahapolice.gov.in/download-forms"
+      },
+      "time_limit_days": 3,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra State Police - Download Forms",
+          "source_url": "https://mahapolice.gov.in/download-forms",
+          "authority": "Maharashtra State Police",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Aaple Sarkar - Loudspeaker Licence",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3B",
+      "title": "Apply for entertainment/amusement permission if applicable",
+      "description": "For an amusement or entertainment programme, complete the applicable Home Department / Police permission process.",
+      "required_forms": [
+        "Applicable entertainment/amusement permission application"
+      ],
+      "required_documents": [
+        "Supporting documents required for the selected programme"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Exact amount depends on licence type and programme."
+      },
+      "office": {
+        "department": "Home Department / Maharashtra Police",
+        "office_name": null,
+        "office_type": "Entertainment Licensing Authority",
+        "location_rule": "Based on venue and jurisdiction"
+      },
+      "prerequisites": [
+        "Entertainment/amusement permission determined applicable"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": true,
+      "application": {
+        "mode": [
+          "government_service"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices"
+      },
+      "time_limit_days": 21,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Home Department Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3C",
+      "title": "Collect event-specific NOCs if applicable",
+      "description": "For larger events, obtain the NOCs required for the specific event, which may include landlord, Traffic Police, Fire Brigade, Electrical Inspector, Health Department, Collector or other competent authorities.",
+      "required_forms": [],
+      "required_documents": [
+        "Applicable NOCs based on event features"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "NOC requirements and fees depend on the event."
+      },
+      "office": {
+        "department": "Applicable NOC Authorities",
+        "office_name": null,
+        "office_type": "Traffic / Fire / Health / Collector / Other Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Event-specific NOCs determined applicable"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": true,
+      "application": {
+        "mode": [
+          "multi_authority"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police FAQ - Events and Performance",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/mh/faq.aspx",
+          "authority": "Maharashtra Police",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Submit the complete event permission application",
+      "description": "Submit the main event permission application together with the applicable supporting permissions and NOCs.",
+      "required_forms": [
+        "Applicable event/performance permission application"
+      ],
+      "required_documents": [
+        "Applicable event-specific NOCs and supporting documents"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Maharashtra Police FAQ lists different fees for specific licence types; the final amount depends on the event and licences required."
+      },
+      "office": {
+        "department": "Maharashtra Police / Competent Event Licensing Authority",
+        "office_name": null,
+        "office_type": "Event Licensing Authority",
+        "location_rule": "Based on event jurisdiction"
+      },
+      "prerequisites": [
+        "Applicable permission applications prepared",
+        "Required NOCs obtained where applicable"
+      ],
+      "depends_on": [
+        "STEP_3A",
+        "STEP_3B",
+        "STEP_3C"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "authority_submission"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police FAQ - Events and Performance",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/mh/faq.aspx",
+          "authority": "Maharashtra Police",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Police enquiry and authority decision",
+      "description": "For the public-entertainment licensing process described by Maharashtra Police, the application is sent for police enquiry before the competent authority decides whether to issue the licence.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Maharashtra Police",
+        "office_name": null,
+        "office_type": "Police / Licensing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Complete application submitted"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "police_enquiry",
+          "authority_decision"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Police FAQ - Events and Performance",
+          "source_url": "https://citizen.mahapolice.gov.in/Citizen/mh/faq.aspx",
+          "authority": "Maharashtra Police",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Receive applicable event permissions",
+      "description": "Once the competent authorities approve the relevant applications, receive the required event licences/permissions before conducting the event.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Applicable Event Licensing Authorities",
+        "office_name": null,
+        "office_type": "Permission Issuing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Required applications approved"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "permission_issuance"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Public Entertainment Licensing",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Login/Certificate_Documents?ServiceId=7097",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "This file uses conditional routing. Not every event requires every listed licence or NOC. Exact requirements must be resolved from event type, venue, activities and jurisdiction."
+  }
+}

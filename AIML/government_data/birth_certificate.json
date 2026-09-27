@@ -1,0 +1,362 @@
+{
+  "task_id": "BIRTH_CERTIFICATE",
+  "task_name": "Birth Certificate",
+  "category": "certificate",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Rural Development Department / Urban Development Department",
+    "sub_department": null,
+    "designated_officer": null,
+    "office_type": "Local Birth Registration Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "rural": {
+      "time_limit": "5 working days",
+      "designated_officer": "Gram Sevak",
+      "first_appellate_officer": "Assistant Block Development Officer",
+      "second_appellate_officer": "Block Development Officer"
+    },
+    "urban": {
+      "time_limit": "3 days",
+      "designated_officer": "Deputy Registrar"
+    }
+  },
+  "registration_branches": {
+    "institutional_birth_within_21_days": {
+      "required_forms": [
+        "Form No. 1 - Birth Report"
+      ],
+      "notes": "Applicable for institutional birth reported within the prescribed period."
+    },
+    "domiciliary_home_birth": {
+      "required_forms": [
+        "Form No. 1 - Birth Report"
+      ],
+      "required_documents": [
+        "Declaration from parents"
+      ],
+      "notes": "Applicable for birth occurring at home/domiciliary setting."
+    },
+    "delayed_registration_30_days_to_1_year": {
+      "required_forms": [
+        "Form No. 1 - Birth Report",
+        "Non-Availability Certificate - Form 10A/10B"
+      ],
+      "required_documents": [
+        "Affidavit or declaration",
+        "Permission from competent authority"
+      ],
+      "notes": "Delayed registration requires additional documentary and approval steps."
+    },
+    "delayed_registration_over_1_year": {
+      "required_forms": [
+        "Form No. 1 - Birth Report",
+        "Non-Availability Certificate - Form 10A/10B"
+      ],
+      "required_documents": [
+        "Affidavit or declaration",
+        "Additional delayed-registration approval/documents as required by competent authority"
+      ],
+      "notes": "Cases exceeding one year require additional delayed-registration formalities."
+    }
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify registration type and jurisdiction",
+      "description": "Determine whether the birth occurred in a rural or urban local body and whether the registration is within the normal period or delayed.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee depends on registration timing and local authority rules; no single statewide fee is inserted here without explicit official confirmation."
+      },
+      "office": {
+        "department": "Local Birth Registration Authority",
+        "office_name": null,
+        "office_type": "Gram Panchayat / Municipal Birth Registration Office",
+        "location_rule": "Office having jurisdiction over the place of birth"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Prepare the applicable birth report and supporting documents",
+      "description": "Prepare Form No. 1 and the supporting documents required for the applicable registration branch.",
+      "required_forms": [
+        "Form No. 1 - Birth Report"
+      ],
+      "required_documents": [
+        "Supporting documents as applicable to institutional, home or delayed registration"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Local Birth Registration Authority",
+        "office_name": null,
+        "office_type": "Gram Panchayat / Municipal Birth Registration Office",
+        "location_rule": "Jurisdiction determined by place of birth"
+      },
+      "prerequisites": [
+        "Registration type identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Birth Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/MHEODB_FeesProcedureChecklist_BirthCertificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Complete delayed-registration requirements if applicable",
+      "description": "If the birth is being registered after the normal reporting period, obtain the required non-availability certificate, affidavit/declaration and competent-authority permission as applicable.",
+      "required_forms": [
+        "Form 10A/10B - Non-Availability Certificate, where applicable"
+      ],
+      "required_documents": [
+        "Affidavit or declaration",
+        "Competent-authority permission for delayed registration, where applicable"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Applicable delayed-registration fees, if any, should be taken from the competent local authority."
+      },
+      "office": {
+        "department": "Local Birth Registration Authority",
+        "office_name": null,
+        "office_type": "Competent Authority / Registrar",
+        "location_rule": "Applicable only for delayed-registration cases"
+      },
+      "prerequisites": [
+        "Birth is outside normal registration period"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "offline",
+          "online_if_available"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Birth Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/MHEODB_FeesProcedureChecklist_BirthCertificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Submit the birth registration application",
+      "description": "Submit the completed birth report and applicable supporting documents to the competent local birth registration authority.",
+      "required_forms": [
+        "Completed Form No. 1"
+      ],
+      "required_documents": [
+        "All supporting documents applicable to the selected registration branch"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No universal statewide amount is inserted without explicit official confirmation."
+      },
+      "office": {
+        "department": "Local Birth Registration Authority",
+        "office_name": null,
+        "office_type": "Gram Panchayat / Municipal Registrar",
+        "location_rule": "Authority having jurisdiction over place of birth"
+      },
+      "prerequisites": [
+        "Required forms completed",
+        "Required supporting documents prepared"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Application verification and processing",
+      "description": "The competent birth registration authority verifies the submitted record and supporting documents.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Rural Development Department / Urban Development Department",
+        "office_name": null,
+        "office_type": "Designated Birth Registration Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "processing"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Birth certificate issuance",
+      "description": "After successful verification and registration, the birth certificate is issued by the competent authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Rural Development Department / Urban Development Department",
+        "office_name": null,
+        "office_type": "Birth Registration Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Registration approved"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "certificate_issuance"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}

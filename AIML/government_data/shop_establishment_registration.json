@@ -1,0 +1,384 @@
+{
+  "task_id": "SHOP_ESTABLISHMENT_REGISTRATION",
+  "task_name": "Shop and Establishment Registration / Intimation",
+  "category": "business_registration",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Labour Department, Government of Maharashtra",
+    "sub_department": "Shops and Establishments",
+    "designated_officer": "Shop Inspector",
+    "office_type": "Labour Administration"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "time_limit_days": 1,
+    "first_appellate_officer": "Concerned District Government Labour Officer",
+    "second_appellate_officer": "Concerned District Assistant Labour Commissioner"
+  },
+  "employee_count_branch": {
+    "ten_or_more_workers": {
+      "service_type": "Registration",
+      "official_form": "Form A",
+      "fee": 0,
+      "notes": "Registration branch for establishments employing ten or more workers."
+    },
+    "zero_to_nine_workers": {
+      "service_type": "Intimation",
+      "official_form": "Form F",
+      "fee": 0,
+      "notes": "Section 7 intimation branch for establishments employing fewer than ten workers."
+    }
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Determine employee-count branch",
+      "description": "Determine whether the establishment employs ten or more workers or fewer than ten workers, because the applicable process differs.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Branch selection itself has no fee."
+      },
+      "office": {
+        "department": "Labour Department",
+        "office_name": null,
+        "office_type": "Shops and Establishments Authority",
+        "location_rule": "Maharashtra"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2A",
+        "STEP_2B"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Shops and Establishments Act, 2017",
+          "source_url": "https://mahakamgar.maharashtra.gov.in/Site/Upload/Pdf/Shops_Establishment_Regulation_of_Employment_Conditions_Eng_27.02.2018.pdf",
+          "authority": "Labour Department, Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2A",
+      "title": "Choose Form A for establishments with 10 or more workers",
+      "description": "Use the registration service and Form A when the establishment employs ten or more workers.",
+      "required_forms": [
+        "Form A"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Aaple Sarkar lists this service as Free."
+      },
+      "office": {
+        "department": "Labour Department",
+        "office_name": null,
+        "office_type": "Shops and Establishments Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Establishment employs 10 or more workers"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Registration under Maharashtra Shops and Establishments Act",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2B",
+      "title": "Choose Form F for establishments with fewer than 10 workers",
+      "description": "Use the intimation service and Form F where the establishment employs fewer than ten workers.",
+      "required_forms": [
+        "Form F"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Aaple Sarkar lists the intimation service as Free."
+      },
+      "office": {
+        "department": "Labour Department",
+        "office_name": null,
+        "office_type": "Shops and Establishments Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Establishment employs fewer than 10 workers"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Intimation under Maharashtra Shops and Establishments Act",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Maharashtra Shops and Establishments Act, 2017 - Section 7",
+          "source_url": "https://mahakamgar.maharashtra.gov.in/Site/Upload/Pdf/Shops_Establishment_Regulation_of_Employment_Conditions_Eng_27.02.2018.pdf",
+          "authority": "Labour Department, Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Fill the applicable online application",
+      "description": "Complete the applicable Form A registration application or Form F intimation application through the government service portal.",
+      "required_forms": [
+        "Form A or Form F depending on worker count"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Service is listed as Free."
+      },
+      "office": {
+        "department": "Labour Department",
+        "office_name": null,
+        "office_type": "Online Service",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Correct branch selected"
+      ],
+      "depends_on": [
+        "STEP_2A",
+        "STEP_2B"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Provide the documents requested by the official service",
+      "description": "Upload or provide the supporting documents requested for the applicable registration or intimation service.",
+      "required_forms": [],
+      "required_documents": [
+        "Supporting documents requested by the official Shops and Establishments service"
+      ],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No synthetic document checklist is inserted here."
+      },
+      "office": {
+        "department": "Labour Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Applicable application completed"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Submit application or intimation",
+      "description": "Submit the completed Form A registration application or Form F intimation through the official service portal.",
+      "required_forms": [
+        "Completed Form A or Form F"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Official service listing marks the service as Free."
+      },
+      "office": {
+        "department": "Labour Department",
+        "office_name": "Shop Inspector",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application complete",
+        "Required supporting documents provided"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar View All Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Department processing and service completion",
+      "description": "The application is processed by the designated Shops and Establishments authority within the notified service timeline.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Labour Department",
+        "office_name": "Shop Inspector",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application or intimation submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": 1,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar View All Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}

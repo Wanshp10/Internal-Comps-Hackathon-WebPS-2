@@ -1,0 +1,328 @@
+{
+  "task_id": "DOMICILE_CERTIFICATE",
+  "task_name": "Age, Nationality and Domicile Certificate",
+  "category": "certificate",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Revenue and Forest Department",
+    "sub_department": "Revenue",
+    "designated_officer": "Tahsildar",
+    "office_type": "Revenue Administration"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "fee": {
+      "amount": 20,
+      "currency": "INR"
+    },
+    "time_limit_days": 15,
+    "first_appellate_officer": "Sub-Divisional Officer",
+    "second_appellate_officer": "Additional Collector"
+  },
+  "document_requirements": {
+    "proof_of_identity_any_one": [
+      "PAN Card",
+      "Passport",
+      "RSBY Card",
+      "Aadhaar Card",
+      "Voter ID Card",
+      "Driving License",
+      "MNREGA Job Card",
+      "Photo of Applicant",
+      "Signature of Applicant",
+      "Identity card issued by Government or Semi-Government organisation"
+    ],
+    "proof_of_address_any_one": [
+      "Passport",
+      "Water Bill",
+      "Ration Card",
+      "Aadhaar Card",
+      "Voter ID Card"
+    ]
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Register or log in to Aaple Sarkar",
+      "description": "Create an Aaple Sarkar profile or log in to an existing account before applying for the service.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Portal registration itself is not listed as carrying the domicile service fee."
+      },
+      "office": {
+        "department": "Aaple Sarkar Service Portal",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/Registration/Register"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Registration",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Registration/Register",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Select the Age, Nationality and Domicile Certificate service",
+      "description": "Select the Revenue Department service for Age, Nationality and Domicile Certificate from the Aaple Sarkar portal.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Service",
+        "location_rule": "Maharashtra"
+      },
+      "prerequisites": [
+        "Aaple Sarkar registration/login"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Upload the required documents",
+      "description": "Provide the required identity proof, address proof and other service-specific documents requested by the portal.",
+      "required_forms": [],
+      "required_documents": [
+        "Any one accepted proof of identity",
+        "Any one accepted proof of address"
+      ],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Service selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Domicile Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees%2C%20Procedure%2C%20Checklist_Domicile%20Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Submit the application and pay the prescribed fee",
+      "description": "Submit the online application and pay the prescribed service fee through the portal.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 20,
+        "currency": "INR",
+        "payment_method": [
+          "online portal"
+        ],
+        "notes": "Official domicile checklist specifies a fee of INR 20."
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Required documents uploaded"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Domicile Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees%2C%20Procedure%2C%20Checklist_Domicile%20Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Track application processing",
+      "description": "Track the submitted application using the Aaple Sarkar application tracking facility while it is processed by the designated authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": "Tahsildar",
+        "office_type": "Designated Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online_tracking"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": 15,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Receive the approved digital certificate",
+      "description": "If the application is eligible and approved, the digitally signed certificate is made available in the applicant profile and a copy is forwarded to DigiLocker.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": "Tahsildar",
+        "office_type": "Designated Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application approval"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "digital_certificate"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar FAQ",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/FAQ-English-22-11-2021.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}

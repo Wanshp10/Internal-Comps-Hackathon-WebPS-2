@@ -1,0 +1,122 @@
+[
+  {
+    "task_id": "BIRTH_CERTIFICATE",
+    "task_name": "Birth Certificate",
+    "state": "Maharashtra",
+    "data_file": "birth_certificate.json"
+  },
+  {
+    "task_id": "DEATH_CERTIFICATE",
+    "task_name": "Death Certificate",
+    "state": "Maharashtra",
+    "data_file": "death_certificate.json"
+  },
+  {
+    "task_id": "MARRIAGE_REGISTRATION",
+    "task_name": "Marriage Registration",
+    "state": "Maharashtra",
+    "data_file": "marriage_registration.json"
+  },
+  {
+    "task_id": "DOMICILE_CERTIFICATE",
+    "task_name": "Domicile Certificate",
+    "state": "Maharashtra",
+    "data_file": "domicile_certificate.json"
+  },
+  {
+    "task_id": "INCOME_CERTIFICATE",
+    "task_name": "Income Certificate",
+    "state": "Maharashtra",
+    "data_file": "income_certificate.json"
+  },
+  {
+    "task_id": "CASTE_CERTIFICATE",
+    "task_name": "Caste Certificate",
+    "state": "Maharashtra",
+    "data_file": "caste_certificate.json"
+  },
+  {
+    "task_id": "NON_CREAMY_LAYER_CERTIFICATE",
+    "task_name": "Non Creamy Layer Certificate",
+    "state": "Maharashtra",
+    "data_file": "non_creamy_layer_certificate.json"
+  },
+  {
+    "task_id": "NEW_RATION_CARD",
+    "task_name": "New Ration Card",
+    "state": "Maharashtra",
+    "data_file": "new_ration_card.json"
+  },
+  {
+    "task_id": "RATION_CARD_UPDATE",
+    "task_name": "Ration Card Update",
+    "state": "Maharashtra",
+    "data_file": "ration_card_update.json"
+  },
+  {
+    "task_id": "SHOP_ESTABLISHMENT_REGISTRATION",
+    "task_name": "Shop Establishment Registration",
+    "state": "Maharashtra",
+    "data_file": "shop_establishment_registration.json"
+  },
+  {
+    "task_id": "OPEN_FOOD_BUSINESS",
+    "task_name": "Open Food Business",
+    "state": "Maharashtra",
+    "data_file": "open_food_business.json"
+  },
+  {
+    "task_id": "PROPERTY_CIVIC_SERVICE",
+    "task_name": "Property Civic Service",
+    "state": "Maharashtra",
+    "data_file": "property_civic_service.json"
+  },
+  {
+    "task_id": "NEW_WATER_CONNECTION",
+    "task_name": "New Water Connection",
+    "state": "Maharashtra",
+    "data_file": "new_water_connection.json"
+  },
+  {
+    "task_id": "TRADE_LICENCE",
+    "task_name": "Trade Licence",
+    "state": "Maharashtra",
+    "data_file": "trade_licence.json"
+  },
+  {
+    "task_id": "HEALTH_LICENCE",
+    "task_name": "Health Licence",
+    "state": "Maharashtra",
+    "data_file": "health_licence.json"
+  },
+  {
+    "task_id": "BUILDING_PERMIT",
+    "task_name": "Building Permit",
+    "state": "Maharashtra",
+    "data_file": "building_permit.json"
+  },
+  {
+    "task_id": "PUBLIC_EVENT_PERMISSION",
+    "task_name": "Public Event Permission",
+    "state": "Maharashtra",
+    "data_file": "public_event_permission.json"
+  },
+  {
+    "task_id": "ASSEMBLY_PROCESSION_PERMISSION",
+    "task_name": "Assembly Procession Permission",
+    "state": "Maharashtra",
+    "data_file": "assembly_procession_permission.json"
+  },
+  {
+    "task_id": "SENIOR_CITIZEN_CERTIFICATE",
+    "task_name": "Senior Citizen Certificate",
+    "state": "Maharashtra",
+    "data_file": "senior_citizen_certificate.json"
+  },
+  {
+    "task_id": "POLICE_CLEARANCE",
+    "task_name": "Police Clearance",
+    "state": "Maharashtra",
+    "data_file": "police_clearance.json"
+  }
+]

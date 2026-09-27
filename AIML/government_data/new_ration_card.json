@@ -1,0 +1,364 @@
+{
+  "task_id": "NEW_RATION_CARD",
+  "task_name": "Issuance of New Ration Card",
+  "category": "ration_card",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Food, Civil Supplies and Consumer Protection Department",
+    "sub_department": null,
+    "designated_officer": null,
+    "office_type": "Ration Card Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "notified_time_limit_days": 30,
+    "official_application_portal": "RCMS Maharashtra"
+  },
+  "official_forms": [
+    {
+      "form_name": "Form 1 - Application for New Ration Card",
+      "source_url": "https://mahafood.gov.in/en/forms/"
+    }
+  ],
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Create or access your RCMS public profile",
+      "description": "Use the Maharashtra RCMS public portal to create/access your profile for online ration-card services.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No fee amount is inserted because it has not been explicitly verified from the official sources used here."
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "RCMS Online Portal",
+        "location_rule": "Maharashtra"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/frmPublicLogin.aspx"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "RCMS Public Login",
+          "source_url": "https://rcms.mahafood.gov.in/frmPublicLogin.aspx",
+          "authority": "Food, Civil Supplies and Consumer Protection Department, Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Select Apply for New Ration Card",
+      "description": "Choose the new ration card service through the Maharashtra RCMS portal.",
+      "required_forms": [
+        "Form 1 - Application for New Ration Card"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "RCMS Online Service",
+        "location_rule": "Maharashtra"
+      },
+      "prerequisites": [
+        "RCMS public profile access"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Services - Food, Civil Supplies and Consumer Protection Department",
+          "source_url": "https://mahafood.gov.in/en/services/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Official Ration Card Forms",
+          "source_url": "https://mahafood.gov.in/en/forms/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Fill applicant and household details",
+      "description": "Complete the applicant and household information requested in the RCMS new ration card application.",
+      "required_forms": [
+        "Form 1 - Application for New Ration Card"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "RCMS Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "New ration card service selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "RCMS Maharashtra",
+          "source_url": "https://rcms.mahafood.gov.in/",
+          "authority": "Government of Maharashtra / National Informatics Centre",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Provide supporting information and documents requested by RCMS",
+      "description": "Provide the supporting information and upload documents requested by the official RCMS application for the applicant and household members.",
+      "required_forms": [],
+      "required_documents": [
+        "Documents requested by the official RCMS application based on applicant and household details"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No unsupported document checklist or fee amount is inserted."
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "RCMS Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Applicant and household details completed"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "RCMS Maharashtra",
+          "source_url": "https://rcms.mahafood.gov.in/",
+          "authority": "Food, Civil Supplies and Consumer Protection Department, Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Submit the new ration card request",
+      "description": "Submit the completed new ration card application through the official RCMS service.",
+      "required_forms": [
+        "Completed Form 1 / online equivalent"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee is intentionally left unset until explicitly verified from an official source."
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "Ration Card Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application details completed",
+        "Required supporting information provided"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Online RC Management System",
+          "source_url": "https://mahafood.gov.in/en/service/online-rc-management-system/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Department processing",
+      "description": "The submitted request is processed by the Food, Civil Supplies and Consumer Protection Department.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "Ration Card Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [
+        "STEP_7"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": 30,
+      "official_sources": [
+        {
+          "source_title": "RCMS Service Dashboard",
+          "source_url": "https://rcms.mahafood.gov.in/frmRCMSServicesDashboard.aspx",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_7",
+      "title": "Check request status",
+      "description": "Use the official RCMS facility to check the status of the submitted request.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "RCMS Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": true,
+      "application": {
+        "mode": [
+          "online_tracking"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "RCMS Maharashtra - Request Status",
+          "source_url": "https://rcms.mahafood.gov.in/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}
