@@ -1,0 +1,370 @@
+{
+  "task_id": "MARRIAGE_REGISTRATION",
+  "task_name": "Marriage Registration / Marriage Certificate",
+  "category": "certificate_registration",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Rural Development Department / Department of Registration and Stamps",
+    "sub_department": null,
+    "designated_officer": null,
+    "office_type": "Marriage Registration Authority"
+  },
+  "eligibility": [],
+  "service_branches": {
+    "rural_marriage_certificate": {
+      "department": "Rural Development Department",
+      "time_limit_days": 5,
+      "designated_officer": "Gram Sevak",
+      "first_appellate_officer": "Assistant Block Development Officer",
+      "second_appellate_officer": "Block Development Officer"
+    },
+    "special_marriage_act": {
+      "department": "Department of Registration and Stamps",
+      "designated_officer": "Concerned Marriage Officer",
+      "notes": "Special Marriage Act services follow a separate registration/solemnization process."
+    }
+  },
+  "document_requirements": {
+    "proof_of_marriage_any_one": [
+      "Marriage invitation card",
+      "Marriage declaration"
+    ],
+    "special_marriage_online_notice": [
+      "Age proof",
+      "Residence proof"
+    ]
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify the applicable marriage-registration route",
+      "description": "Determine whether the request is for a rural marriage certificate or a Special Marriage Act service handled by the Marriage Officer.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No universal fee inserted because the applicable route determines the fee/process."
+      },
+      "office": {
+        "department": "Rural Development Department / Department of Registration and Stamps",
+        "office_name": null,
+        "office_type": "Marriage Registration Authority",
+        "location_rule": "Depends on applicable marriage-registration route"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2A",
+        "STEP_2B"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2A",
+      "title": "Rural route - apply for Marriage Certificate",
+      "description": "For the Rural Development Department service, apply for the Marriage Certificate through the competent rural authority.",
+      "required_forms": [],
+      "required_documents": [
+        "Applicable marriage-registration documents required by the official service"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee not inserted without explicit official confirmation."
+      },
+      "office": {
+        "department": "Rural Development Department",
+        "office_name": "Gram Sevak",
+        "office_type": "Designated Officer",
+        "location_rule": "Competent rural local authority"
+      },
+      "prerequisites": [
+        "Rural marriage-certificate route selected"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3A"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": 5,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Rural Development Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2B",
+      "title": "Special Marriage Act route - submit notice or application",
+      "description": "For a Special Marriage Act service, submit the notice/application to the concerned Marriage Officer. The official online facility can be used to enter details and upload supporting documents.",
+      "required_forms": [],
+      "required_documents": [
+        "Age proof",
+        "Residence proof"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee not inserted without explicit official confirmation."
+      },
+      "office": {
+        "department": "Department of Registration and Stamps",
+        "office_name": "Concerned Marriage Officer",
+        "office_type": "Marriage Office",
+        "location_rule": "Concerned marriage office based on applicable jurisdiction"
+      },
+      "prerequisites": [
+        "Special Marriage Act route selected"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3B"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online_submission"
+        ],
+        "application_link": "https://mregigr.maharashtra.gov.in/autonoticepublic"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Marriage Certificate - Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees_Procedure_Checklist_Marriage_Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3A",
+      "title": "Rural authority processing",
+      "description": "The rural marriage-certificate application is processed by the designated authority within the notified service timeline.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Rural Development Department",
+        "office_name": "Gram Sevak",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Rural marriage-certificate application submitted"
+      ],
+      "depends_on": [
+        "STEP_2A"
+      ],
+      "unlocks": [
+        "STEP_4A"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": 5,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3B",
+      "title": "Complete Special Marriage Act in-person registration or solemnization",
+      "description": "The online facility is limited to submission of notice/application and documents. The marriage is solemnized or registered before the concerned Marriage Officer.",
+      "required_forms": [],
+      "required_documents": [
+        "Original/supporting documents required by the Marriage Officer"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Department of Registration and Stamps",
+        "office_name": "Concerned Marriage Officer",
+        "office_type": "Marriage Office",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Online notice/application submitted"
+      ],
+      "depends_on": [
+        "STEP_2B"
+      ],
+      "unlocks": [
+        "STEP_4B"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "in_person"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Marriage Certificate - Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees_Procedure_Checklist_Marriage_Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4A",
+      "title": "Receive rural Marriage Certificate",
+      "description": "After successful processing, the Marriage Certificate is issued through the competent rural authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Rural Development Department",
+        "office_name": "Gram Sevak",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Rural application approved"
+      ],
+      "depends_on": [
+        "STEP_3A"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "certificate_issuance"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4B",
+      "title": "Marriage registration or solemnization completed",
+      "description": "The Special Marriage Act process is completed before the concerned Marriage Officer according to the applicable statutory process.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Department of Registration and Stamps",
+        "office_name": "Concerned Marriage Officer",
+        "office_type": "Marriage Office",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Applicable Marriage Officer procedure completed"
+      ],
+      "depends_on": [
+        "STEP_3B"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "registration_completion"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Special Marriage Act Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}

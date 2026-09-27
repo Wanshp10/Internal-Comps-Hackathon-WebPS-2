@@ -1,0 +1,23 @@
+{
+  "BIRTH_CERTIFICATE": "birth_certificate.json",
+  "DEATH_CERTIFICATE": "death_certificate.json",
+  "MARRIAGE_REGISTRATION": "marriage_registration.json",
+  "DOMICILE_CERTIFICATE": "domicile_certificate.json",
+  "INCOME_CERTIFICATE": "income_certificate.json",
+  "CASTE_CERTIFICATE": "caste_certificate.json",
+  "NON_CREAMY_LAYER_CERTIFICATE": "non_creamy_layer_certificate.json",
+  "NEW_RATION_CARD": "new_ration_card.json",
+  "RATION_CARD_UPDATE": "ration_card_update.json",
+  "SHOP_ESTABLISHMENT_REGISTRATION": "shop_establishment_registration.json",
+  "OPEN_FOOD_BUSINESS": "open_food_business.json",
+  "PROPERTY_CIVIC_SERVICE": "property_civic_service.json",
+  "NEW_WATER_CONNECTION": "new_water_connection.json",
+  "TRADE_LICENCE": "trade_licence.json",
+  "HEALTH_LICENCE": "health_licence.json",
+  "BUILDING_PERMIT": "building_permit.json",
+  "PUBLIC_EVENT_PERMISSION": "public_event_permission.json",
+  "ASSEMBLY_PROCESSION_PERMISSION": "assembly_procession_permission.json",
+  "SENIOR_CITIZEN_CERTIFICATE": "senior_citizen_certificate.json",
+  "POLICE_CLEARANCE": "police_clearance.json",
+  "GENERAL_CIVIC_TASK": "dynamic_retrieval"
+}

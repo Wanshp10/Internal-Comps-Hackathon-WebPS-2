@@ -1,0 +1,464 @@
+{
+  "task_id": "OPEN_FOOD_BUSINESS",
+  "task_name": "Open a Food Business",
+  "category": "multi_department_business_setup",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Multiple Authorities",
+    "sub_department": null,
+    "designated_officer": null,
+    "office_type": "FSSAI / Labour Department / Applicable Municipal Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "multi_department_task": true,
+    "location_dependent": true,
+    "business_type_dependent": true,
+    "notes": "Exact licence category and municipal permissions depend on turnover, kind of food business, premises and local authority."
+  },
+  "major_requirements": {
+    "fssai": {
+      "mandatory_for_food_business_operator": true,
+      "authority": "Food Safety and Standards Authority of India",
+      "portal": "FoSCoS",
+      "categories": [
+        "Registration",
+        "State Licence",
+        "Central Licence"
+      ]
+    },
+    "shops_and_establishments": {
+      "authority": "Labour Department, Government of Maharashtra",
+      "employee_branches": {
+        "0_to_9_workers": "Form F - Intimation",
+        "10_or_more_workers": "Form A - Registration"
+      }
+    },
+    "municipal_permissions": {
+      "authority": "Applicable Urban Local Body",
+      "possible_services": [
+        "Health Licence",
+        "Trade Licence"
+      ],
+      "notes": "Applicability depends on local body and business activity."
+    }
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Define the food-business type and location",
+      "description": "Identify the type of food business, premises location and expected business scale so that the correct FSSAI and local-authority routes can be determined.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No fee applies to this routing step."
+      },
+      "office": {
+        "department": "Not applicable",
+        "office_name": null,
+        "office_type": "Routing Step",
+        "location_rule": "Maharashtra business location required"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2",
+        "STEP_4",
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "information_collection"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "FSSAI Registration",
+          "source_url": "https://fssai.gov.in/business/registration",
+          "authority": "Food Safety and Standards Authority of India",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Determine FSSAI Registration or Licence category",
+      "description": "Use FoSCoS eligibility to determine whether the food business requires Registration, State Licence or Central Licence. Petty food businesses with annual turnover up to INR 12 lakh fall under Registration; businesses above that threshold require a licence, with the exact category determined by FSSAI eligibility criteria.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee depends on FSSAI category and kind of business."
+      },
+      "office": {
+        "department": "Food Safety and Standards Authority of India",
+        "office_name": "FoSCoS",
+        "office_type": "Online Food Licensing System",
+        "location_rule": "Select Maharashtra and the food-business premises"
+      },
+      "prerequisites": [
+        "Food-business type identified",
+        "Business location identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://foscos.fssai.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "FSSAI Registration",
+          "source_url": "https://fssai.gov.in/business/registration",
+          "authority": "Food Safety and Standards Authority of India",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "FoSCoS",
+          "source_url": "https://foscos.fssai.gov.in/",
+          "authority": "Food Safety and Standards Authority of India",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Apply for FSSAI Registration or Licence",
+      "description": "Complete the applicable FoSCoS application using the category determined by the official eligibility system and submit the required category-specific documents.",
+      "required_forms": [
+        "Form A for FSSAI Registration where applicable",
+        "Applicable FoSCoS licence application for licence category"
+      ],
+      "required_documents": [
+        "Documents required by FoSCoS for the selected Kind of Business and licence category"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [
+          "FoSCoS"
+        ],
+        "notes": "Exact amount depends on licence/registration category and kind of business."
+      },
+      "office": {
+        "department": "Food Safety and Standards Authority of India",
+        "office_name": "FoSCoS",
+        "office_type": "Online Licensing Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "FSSAI category determined"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": true,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://foscos.fssai.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "FoSCoS Licensing and Registration",
+          "source_url": "https://foscos.fssai.gov.in/",
+          "authority": "Food Safety and Standards Authority of India",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Complete Shops and Establishments requirement",
+      "description": "Complete the Maharashtra Shops and Establishments requirement based on employee count: Form F intimation for fewer than 10 workers or Form A registration for 10 or more workers.",
+      "required_forms": [
+        "Form F for 0 to 9 employees, or Form A for 10 or more employees"
+      ],
+      "required_documents": [
+        "Documents requested by the official Shops and Establishments service"
+      ],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Aaple Sarkar lists Form A registration and Form F intimation services as Free."
+      },
+      "office": {
+        "department": "Labour Department, Government of Maharashtra",
+        "office_name": null,
+        "office_type": "Shops and Establishments Authority",
+        "location_rule": "Based on establishment location"
+      },
+      "prerequisites": [
+        "Employee count known"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": true,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Shops and Establishments",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Check local municipal Health and Trade Licence requirements",
+      "description": "Check whether the competent Urban Local Body requires a Health Licence, Trade Licence or other municipal permission for the selected food-business activity and premises.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Municipal charges vary by local body and activity."
+      },
+      "office": {
+        "department": "Applicable Municipal Authority",
+        "office_name": null,
+        "office_type": "Health / Licence Department",
+        "location_rule": "Based on business premises"
+      },
+      "prerequisites": [
+        "Business activity known",
+        "Local body identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_5A",
+        "STEP_5B"
+      ],
+      "can_run_in_parallel": true,
+      "application": {
+        "mode": [
+          "local_body_dependent"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Municipal Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5A",
+      "title": "Apply for Health Licence if applicable",
+      "description": "Where the local municipal authority requires a Health Licence for the food-business activity, complete the applicable Health Department process.",
+      "required_forms": [
+        "Applicable Municipal Health Licence application"
+      ],
+      "required_documents": [
+        "Documents required by the competent municipal Health Department"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [
+          "authority_dependent"
+        ],
+        "notes": "Applies only where required by the competent local authority."
+      },
+      "office": {
+        "department": "Municipal Health Department",
+        "office_name": null,
+        "office_type": "Health Licensing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Health Licence determined to be applicable"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": true,
+      "application": {
+        "mode": [
+          "local_body_dependent"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Health Licence",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5B",
+      "title": "Apply for Trade Licence if applicable",
+      "description": "Where the competent municipal authority requires a Trade Licence for the activity, submit the applicable municipal Trade Licence application.",
+      "required_forms": [
+        "Applicable New Trade Licence application"
+      ],
+      "required_documents": [
+        "Documents required by the competent Urban Local Body"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [
+          "authority_dependent"
+        ],
+        "notes": "Applies only where required by the competent local authority."
+      },
+      "office": {
+        "department": "Applicable Municipal Licence Department",
+        "office_name": null,
+        "office_type": "Trade Licensing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Trade Licence determined to be applicable"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": true,
+      "application": {
+        "mode": [
+          "local_body_dependent"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar - Trade Licence",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Complete all applicable approvals before operation",
+      "description": "Complete the FSSAI requirement, Shops and Establishments requirement and any applicable local municipal permissions before operating the food business where those approvals are legally required.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Multiple Authorities",
+        "office_name": null,
+        "office_type": "Compliance Completion",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Applicable FSSAI Registration/Licence completed",
+        "Applicable Shops and Establishments process completed",
+        "Applicable municipal permissions completed"
+      ],
+      "depends_on": [
+        "STEP_3",
+        "STEP_4",
+        "STEP_5A",
+        "STEP_5B"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "compliance_completion"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "FSSAI Registration",
+          "source_url": "https://fssai.gov.in/business/registration",
+          "authority": "Food Safety and Standards Authority of India",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "FSSAI requirement is nationally applicable to food businesses. Municipal Health/Trade Licence applicability and requirements must be resolved using the competent Maharashtra local body."
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "task_id": "PROPERTY_CIVIC_SERVICE",
+  "task_name": "Property Related Municipal Services",
+  "category": "municipal_property_service",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Applicable Urban Local Body",
+    "sub_department": "Property Tax / Assessment Department",
+    "designated_officer": null,
+    "office_type": "Municipal Property Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "local_body_dependent": true,
+    "router_task": true,
+    "notes": "PROPERTY_CIVIC_SERVICE is a routing task. The user must first select the exact municipal property service."
+  },
+  "supported_service_routes": {
+    "property_tax_extract": {
+      "service_name": "Property Tax Extract"
+    },
+    "no_dues_certificate": {
+      "service_name": "Certificate of No Dues"
+    },
+    "property_transfer_mutation": {
+      "service_name": "Property Transfer Entry / Mutation"
+    },
+    "inheritance_transfer": {
+      "service_name": "Property Transfer Entry by Inheritance"
+    },
+    "new_property_tax_assessment": {
+      "service_name": "New Property Tax Assessment"
+    },
+    "property_tax_reassessment": {
+      "service_name": "Reassessment of Property Tax"
+    },
+    "property_tax_objection": {
+      "service_name": "Filing Objection"
+    },
+    "property_tax_exemption": {
+      "service_name": "Tax Exemption / Applicable Rebate Service"
+    }
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify the property's Urban Local Body",
+      "description": "Identify the Municipal Corporation, Municipal Council or Nagar Panchayat responsible for the property.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fees vary by Urban Local Body."
+      },
+      "office": {
+        "department": "Applicable Urban Local Body",
+        "office_name": null,
+        "office_type": "Property Tax / Assessment Department",
+        "location_rule": "Based on property location"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": "https://mahaulb.in/MahaULB/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration - Property Related Services",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/rts/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Select the required property service",
+      "description": "Choose the exact service required, such as Property Tax Extract, No Dues Certificate, property mutation/transfer, inheritance transfer, new assessment, reassessment or objection.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Applicable charges depend on the selected service and ULB."
+      },
+      "office": {
+        "department": "Applicable Urban Local Body",
+        "office_name": null,
+        "office_type": "Citizen Service / Property Department",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Urban Local Body identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": "https://mahaulb.in/MahaULB/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "DMA Right to Services - Citizen Services",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/rts/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Enter property and applicant details",
+      "description": "Provide the property identification and applicant details requested by the competent ULB for the selected property service.",
+      "required_forms": [
+        "Applicable ULB property-service application"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Property Tax / Assessment Department",
+        "office_name": null,
+        "office_type": "ULB Citizen Service",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Property service selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": "https://mahaulb.in/MahaULB/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "DMA FAQ - Property Services",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/faq/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Provide service-specific supporting documents",
+      "description": "Provide the documents required by the competent ULB for the selected service. Mutation, inheritance transfer and assessment services may require different supporting records.",
+      "required_forms": [],
+      "required_documents": [
+        "Documents specified by the competent ULB for the selected property service"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No universal property-document checklist has been inserted."
+      },
+      "office": {
+        "department": "Applicable Urban Local Body",
+        "office_name": null,
+        "office_type": "Property / Assessment Department",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Property and applicant details completed"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/rts/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Pay applicable ULB fee and submit the request",
+      "description": "Pay any fee prescribed by the concerned Urban Local Body and submit the selected property-service request.",
+      "required_forms": [
+        "Completed applicable property-service application"
+      ],
+      "required_documents": [
+        "Applicable supporting documents"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [
+          "ULB dependent"
+        ],
+        "notes": "Official Maharashtra guidance states that levies and fees may vary from one Urban Local Body to another."
+      },
+      "office": {
+        "department": "Applicable Urban Local Body",
+        "office_name": null,
+        "office_type": "Property / Tax Department",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application completed",
+        "Required documents provided"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": "https://mahaulb.in/MahaULB/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "DMA - ULB Levies and Tax Rates Information",
+          "source_url": "https://mahaulb.in/MahaULB/pdf/Levies_TaxRates_Information_UD2_2022.pdf",
+          "authority": "Directorate of Municipal Administration, Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Municipal verification and processing",
+      "description": "The competent Urban Local Body verifies and processes the request according to the selected property service.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Applicable Urban Local Body",
+        "office_name": null,
+        "office_type": "Property / Assessment Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Property-service request submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [
+        "STEP_7"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "DMA Right to Services",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/rts/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_7",
+      "title": "Receive the requested property service output",
+      "description": "After approval, receive the applicable municipal output, such as a Property Tax Extract, No Dues Certificate, mutation/transfer entry or updated property assessment record.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Applicable Urban Local Body",
+        "office_name": null,
+        "office_type": "Municipal Property Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Selected property service approved/completed"
+      ],
+      "depends_on": [
+        "STEP_6"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "certificate_or_record_issuance"
+        ],
+        "application_link": "https://mahaulb.in/MahaULB/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "DMA Citizen Services",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/rts/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "This task intentionally acts as a property-service router. Exact documents, fees, officer and processing time must be resolved from the selected Urban Local Body and service."
+  }
+}

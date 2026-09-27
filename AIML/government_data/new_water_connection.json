@@ -1,0 +1,392 @@
+{
+  "task_id": "NEW_WATER_CONNECTION",
+  "task_name": "New Water Connection",
+  "category": "municipal_water_service",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Applicable Municipal Water Supply Authority / Maharashtra Jeevan Pradhikaran",
+    "sub_department": "Water Supply",
+    "designated_officer": null,
+    "office_type": "Municipal / Water Supply Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "authority_dependent": true,
+    "notes": "Exact procedure, documents, fees and officer depend on the local water-supply authority."
+  },
+  "authority_routes": {
+    "municipal_local_body": {
+      "authority": "Applicable Municipal Council / Municipal Corporation",
+      "official_service": "New Water Connection"
+    },
+    "maharashtra_jeevan_pradhikaran": {
+      "authority": "Maharashtra Jeevan Pradhikaran",
+      "official_form_available": true
+    },
+    "midc_area": {
+      "authority": "Maharashtra Industrial Development Corporation",
+      "service": "New Water Supply Connection"
+    }
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify the competent water-supply authority",
+      "description": "Determine whether the property is served by a Municipal Corporation, Municipal Council, Maharashtra Jeevan Pradhikaran, MIDC or another competent local water-supply authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fees vary by authority."
+      },
+      "office": {
+        "department": "Applicable Water Supply Authority",
+        "office_name": null,
+        "office_type": "Municipal / Water Supply Authority",
+        "location_rule": "Based on the property's service jurisdiction"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "authority_dependent"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration - Right to Services",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/rts/",
+          "authority": "Directorate of Municipal Administration, Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Obtain the applicable water connection application",
+      "description": "Use the new water connection application/form provided by the competent authority.",
+      "required_forms": [
+        "Applicable New Water Connection application/form"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No universal statewide application fee is inserted."
+      },
+      "office": {
+        "department": "Applicable Water Supply Authority",
+        "office_name": null,
+        "office_type": "Water Supply Office",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Competent authority identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://mjp.maharashtra.gov.in/forms-download/water-connection-form/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Jeevan Pradhikaran - Water Connection Form",
+          "source_url": "https://mjp.maharashtra.gov.in/forms-download/water-connection-form/",
+          "authority": "Maharashtra Jeevan Pradhikaran, Water Supply and Sanitation Department",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Directorate of Municipal Administration - New Water Connection",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/services-type/citizen-services/page/7/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Fill property and connection details",
+      "description": "Complete the property, applicant and requested water-connection details required by the competent authority.",
+      "required_forms": [
+        "Applicable New Water Connection application"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Applicable Water Supply Authority",
+        "office_name": null,
+        "office_type": "Water Supply Office",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Applicable application obtained"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "authority_dependent"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Jeevan Pradhikaran - Water Connection Form",
+          "source_url": "https://mjp.maharashtra.gov.in/forms-download/water-connection-form/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Provide authority-specific supporting documents",
+      "description": "Submit the ownership/property and other supporting documents required by the competent local authority.",
+      "required_forms": [],
+      "required_documents": [
+        "Supporting documents specified by the competent water-supply authority"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Document checklist varies by local authority and has not been generalized."
+      },
+      "office": {
+        "department": "Applicable Water Supply Authority",
+        "office_name": null,
+        "office_type": "Water Supply Office",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application details completed"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration - New Water Connection",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/rts/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Submit application to the competent authority",
+      "description": "Submit the completed application and supporting documents to the authority responsible for water supply at the property location.",
+      "required_forms": [
+        "Completed New Water Connection application"
+      ],
+      "required_documents": [
+        "Authority-specific supporting documents"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Applicable connection/deposit charges depend on the authority."
+      },
+      "office": {
+        "department": "Applicable Water Supply Authority",
+        "office_name": null,
+        "office_type": "Water Supply Department",
+        "location_rule": "Property jurisdiction"
+      },
+      "prerequisites": [
+        "Application and documents ready"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration - Right to Services",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/rts/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Technical inspection and approval where required",
+      "description": "The competent authority may inspect the site and verify the technical feasibility of the requested connection before approval.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Applicable Water Supply Authority",
+        "office_name": null,
+        "office_type": "Engineering / Water Supply Department",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [
+        "STEP_7"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "MIDC - Engineering Pre-Operations",
+          "source_url": "https://midc.maharashtra.gov.in/en/customers/",
+          "authority": "Maharashtra Industrial Development Corporation",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "CIDCO Water Supply Procedure and Checklist",
+          "source_url": "https://cidco.maharashtra.gov.in/pdf/engineering_services/Water_Supply_Procedure_and_Check_List.pdf",
+          "authority": "CIDCO Ltd., Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_7",
+      "title": "Complete connection installation",
+      "description": "After approval and completion of the authority's required conditions and charges, the sanctioned water connection is installed through the applicable authority process.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Installation and connection charges remain authority-specific."
+      },
+      "office": {
+        "department": "Applicable Water Supply Authority",
+        "office_name": null,
+        "office_type": "Engineering / Water Supply Department",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application approved",
+        "Applicable authority requirements completed"
+      ],
+      "depends_on": [
+        "STEP_6"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "connection_execution"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Jeevan Pradhikaran - Water Management System",
+          "source_url": "https://mjp.maharashtra.gov.in/water-management-system/",
+          "authority": "Maharashtra Jeevan Pradhikaran",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "CIDCO Water Supply Procedure and Checklist",
+          "source_url": "https://cidco.maharashtra.gov.in/pdf/engineering_services/Water_Supply_Procedure_and_Check_List.pdf",
+          "authority": "CIDCO Ltd.",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "Water-connection requirements are local-authority dependent. This file intentionally avoids treating CIDCO, MIDC or MJP-specific requirements as universal Maharashtra requirements."
+  }
+}

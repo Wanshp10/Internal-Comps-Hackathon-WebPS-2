@@ -1,0 +1,352 @@
+{
+  "task_id": "BUILDING_PERMIT",
+  "task_name": "Building Permit / Building Plan Approval",
+  "category": "municipal_building_permission",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Applicable Planning / Municipal Authority",
+    "sub_department": "Building Proposal / Town Planning",
+    "designated_officer": null,
+    "office_type": "Building Permission Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "authority_dependent": true,
+    "notes": "Exact authority, documents, scrutiny fees, development charges and approval stages vary by planning jurisdiction."
+  },
+  "authority_routes": {
+    "urban_local_body": {
+      "authority": "Applicable Municipal Corporation / Municipal Council",
+      "system": "Building Permission Management System (BPMS)"
+    },
+    "midc_area": {
+      "authority": "Maharashtra Industrial Development Corporation",
+      "system": "Building Plan Approval Management System (BPAMS)"
+    },
+    "mmrda_spa_area": {
+      "authority": "Mumbai Metropolitan Region Development Authority",
+      "system": "Building Plan Management System"
+    },
+    "bmc_mumbai": {
+      "authority": "Brihanmumbai Municipal Corporation",
+      "time_limit_days": 60,
+      "designated_officer": "Concerned Executive Engineer (Building Proposal)",
+      "first_appellate_officer": "Concerned Deputy Chief Engineer (Building Proposal)",
+      "second_appellate_officer": "Chief Engineer (Development Planning)"
+    }
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify the competent planning authority",
+      "description": "Determine which planning or municipal authority has jurisdiction over the property, such as an Urban Local Body, BMC, MIDC or MMRDA SPA.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fees depend on the competent planning authority."
+      },
+      "office": {
+        "department": "Applicable Planning Authority",
+        "office_name": null,
+        "office_type": "Building Permission Authority",
+        "location_rule": "Based on property/planning jurisdiction"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "authority_dependent"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration - BPMS",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/faq/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Prepare building proposal through the applicable system",
+      "description": "Prepare and submit the building proposal through the competent authority's building permission system. Architect-led online submission is used in systems such as MMRDA BPMS and MIDC BPAMS.",
+      "required_forms": [
+        "Applicable Building Permission / Building Plan Approval application"
+      ],
+      "required_documents": [
+        "Building plans and supporting proposal documents required by the competent authority"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Exact submission requirements vary by planning authority."
+      },
+      "office": {
+        "department": "Building Proposal / Town Planning Department",
+        "office_name": null,
+        "office_type": "Online Building Permission System",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Competent planning authority identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "MIDC Building Plan Approval Management System",
+          "source_url": "https://midc.maharashtra.gov.in/en/customers/",
+          "authority": "Maharashtra Industrial Development Corporation",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "MMRDA Building Plan Approval System",
+          "source_url": "https://mmrda.maharashtra.gov.in/en/projects/egovernance/building-plan-approval-system/overview",
+          "authority": "Mumbai Metropolitan Region Development Authority",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Building plan scrutiny",
+      "description": "The submitted building proposal is scrutinized against the applicable development control regulations. Some systems use automated CAD-based scrutiny.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Planning / Building Proposal Department",
+        "office_name": null,
+        "office_type": "Scrutiny Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Building proposal submitted"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "technical_scrutiny"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "MIDC BPAMS",
+          "source_url": "https://midc.maharashtra.gov.in/en/customers/",
+          "authority": "Maharashtra Industrial Development Corporation",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "MMRDA Building Plan Approval System",
+          "source_url": "https://mmrda.maharashtra.gov.in/en/projects/egovernance/building-plan-approval-system/overview",
+          "authority": "Mumbai Metropolitan Region Development Authority",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Resolve deficiencies if raised",
+      "description": "If the authority identifies deficiencies during scrutiny, submit the required corrections or revised proposal before approval proceeds.",
+      "required_forms": [],
+      "required_documents": [
+        "Corrected/revised proposal documents where required"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Planning / Building Proposal Department",
+        "office_name": null,
+        "office_type": "Scrutiny Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Deficiency raised by authority, if applicable"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "rectification"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "MMRDA Building Plan Approval System",
+          "source_url": "https://mmrda.maharashtra.gov.in/en/projects/egovernance/building-plan-approval-system/overview",
+          "authority": "Mumbai Metropolitan Region Development Authority",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Pay applicable scrutiny fees, charges and deposits",
+      "description": "Pay the amounts specified by the competent authority after scrutiny, such as scrutiny fees, development charges, premiums or deposits where applicable.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [
+          "authority_dependent"
+        ],
+        "notes": "No universal Maharashtra amount exists in the sources used; charges depend on authority and proposal."
+      },
+      "office": {
+        "department": "Applicable Planning Authority",
+        "office_name": null,
+        "office_type": "Payment / Building Proposal Department",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Proposal scrutiny completed"
+      ],
+      "depends_on": [
+        "STEP_3",
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online_payment",
+          "authority_payment"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "MMRDA Building Plan Approval System",
+          "source_url": "https://mmrda.maharashtra.gov.in/en/projects/egovernance/building-plan-approval-system/overview",
+          "authority": "Mumbai Metropolitan Region Development Authority",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Authority approval and building permit issuance",
+      "description": "After successful scrutiny, corrections and applicable payments, the competent authority issues the applicable building/development permission.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Applicable Planning Authority",
+        "office_name": null,
+        "office_type": "Building Permission Issuing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Technical scrutiny completed",
+        "Applicable deficiencies resolved",
+        "Applicable charges paid"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "permit_issuance"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration - BPMS",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/faq/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Aaple Sarkar - BMC Building Permit",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "Building permission is planning-authority dependent. BMC's notified building-permit timeline is 60 days, but that timeline is not generalized to all Maharashtra authorities."
+  }
+}

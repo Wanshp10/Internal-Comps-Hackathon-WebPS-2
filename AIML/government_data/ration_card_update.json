@@ -1,0 +1,512 @@
+{
+  "task_id": "RATION_CARD_UPDATE",
+  "task_name": "Ration Card Modification",
+  "category": "ration_card",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Food, Civil Supplies and Consumer Protection Department",
+    "sub_department": null,
+    "designated_officer": "Rationing Officer / Zonal Officer / Tahsildar / Food Distribution Officer",
+    "office_type": "Ration Card Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "modification_types": [
+      "Correction of name in Ration Card",
+      "Inclusion of names in Ration Card",
+      "Removal of name in Ration Card",
+      "Change of Address in Ration Card"
+    ],
+    "first_appellate_authority": "Assistant Controller of Rationing / Food Distribution Officer / District Supply Officer",
+    "second_appellate_authority": "Deputy Controller of Rationing / Deputy Commissioner (Supply)"
+  },
+  "official_forms": [
+    {
+      "form_name": "Form 8 - Increase in the units (Name addition)",
+      "source_url": "https://mahafood.gov.in/en/forms/"
+    },
+    {
+      "form_name": "Form 9 - Decrease in the units (Name deletion)",
+      "source_url": "https://mahafood.gov.in/en/forms/"
+    },
+    {
+      "form_name": "Form 14 - Change in the ration card",
+      "source_url": "https://mahafood.gov.in/en/forms/"
+    }
+  ],
+  "service_branches": {
+    "name_correction": {
+      "time_limit": "3 working days",
+      "official_form": "Form 14 - Change in the ration card"
+    },
+    "member_inclusion": {
+      "time_limit": "30 days if home visit is required, otherwise 3 working days",
+      "official_form": "Form 8 - Increase in the units (Name addition)"
+    },
+    "member_removal": {
+      "time_limit": "30 days if home visit is required, otherwise 3 working days",
+      "official_form": "Form 9 - Decrease in the units (Name deletion)"
+    },
+    "address_change": {
+      "time_limit": "30 days if home visit is required, otherwise 3 working days",
+      "official_form": "Form 14 - Change in the ration card"
+    }
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Log in to the RCMS public portal",
+      "description": "Access the Maharashtra RCMS public portal using your registered public profile.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No fee amount inserted without explicit current official verification."
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "RCMS Online Portal",
+        "location_rule": "Maharashtra"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/frmPublicLogin.aspx"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "RCMS Public Login",
+          "source_url": "https://rcms.mahafood.gov.in/frmPublicLogin.aspx",
+          "authority": "Food, Civil Supplies and Consumer Protection Department, Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Select the required ration-card modification",
+      "description": "Choose name correction, member addition, member removal or address change.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "RCMS Service",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "RCMS public profile access"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3A",
+        "STEP_3B",
+        "STEP_3C",
+        "STEP_3D"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Food Department - Ration Card Services",
+          "source_url": "https://mahafood.gov.in/en/services/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3A",
+      "title": "Name correction - complete Form 14 / online equivalent",
+      "description": "Use the official change form or its online equivalent for correction of name in the ration card.",
+      "required_forms": [
+        "Form 14 - Change in the ration card"
+      ],
+      "required_documents": [
+        "Supporting documents requested by RCMS for the correction"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No unsupported fee inserted."
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "Ration Card Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Name correction selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": 3,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Ration Card Forms",
+          "source_url": "https://mahafood.gov.in/en/forms/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "Maharashtra Right to Public Services - Food Department",
+          "source_url": "https://mahafood.gov.in/website/PDF_files/RTS_list_E.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3B",
+      "title": "Member addition - complete Form 8 / online equivalent",
+      "description": "Use Form 8 or its online equivalent to add a member to the ration card.",
+      "required_forms": [
+        "Form 8 - Increase in the units (Name addition)"
+      ],
+      "required_documents": [
+        "Member details and supporting documents requested by RCMS"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "Ration Card Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Member inclusion selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Ration Card Forms",
+          "source_url": "https://mahafood.gov.in/en/forms/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        },
+        {
+          "source_title": "RCMS Member Details",
+          "source_url": "https://rcms.mahafood.gov.in/frmNewRCMember.aspx",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3C",
+      "title": "Member removal - complete Form 9 / online equivalent",
+      "description": "Use Form 9 or its online equivalent to remove a member from the ration card.",
+      "required_forms": [
+        "Form 9 - Decrease in the units (Name deletion)"
+      ],
+      "required_documents": [
+        "Supporting documents requested by RCMS for member removal"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "Ration Card Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Member removal selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Ration Card Forms",
+          "source_url": "https://mahafood.gov.in/en/forms/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3D",
+      "title": "Address change - complete Form 14 / online equivalent",
+      "description": "Use Form 14 or its online equivalent to update the ration-card address.",
+      "required_forms": [
+        "Form 14 - Change in the ration card"
+      ],
+      "required_documents": [
+        "Address-related supporting documents requested by RCMS"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "Ration Card Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Address change selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Ration Card Forms",
+          "source_url": "https://mahafood.gov.in/en/forms/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Submit the modification request",
+      "description": "Submit the applicable ration-card modification request through RCMS with the required supporting information.",
+      "required_forms": [
+        "Applicable Form 8, Form 9 or Form 14 / online equivalent"
+      ],
+      "required_documents": [
+        "Supporting documents requested by RCMS for the selected modification"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No fee amount inserted without explicit official verification."
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "Ration Card Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Applicable modification form completed"
+      ],
+      "depends_on": [
+        "STEP_3A",
+        "STEP_3B",
+        "STEP_3C",
+        "STEP_3D"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Online RC Management System",
+          "source_url": "https://mahafood.gov.in/en/service/online-rc-management-system/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Department verification and processing",
+      "description": "The ration-card authority verifies and processes the modification request. A home visit may be required for some modification types.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": "Rationing Officer / Zonal Officer / Tahsildar / Food Distribution Officer",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Modification request submitted"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Maharashtra Right to Public Services - Food Department",
+          "source_url": "https://mahafood.gov.in/website/PDF_files/RTS_list_E.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Track the request and receive the updated ration card",
+      "description": "Track the request using the RCMS reference number and complete the service after approval.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Food, Civil Supplies and Consumer Protection Department",
+        "office_name": null,
+        "office_type": "RCMS / Ration Card Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Modification request submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online_tracking",
+          "service_completion"
+        ],
+        "application_link": "https://rcms.mahafood.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "RCMS Maharashtra",
+          "source_url": "https://rcms.mahafood.gov.in/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "RCMS dashboard groups ration-card modifications under a 30-day notified timeline, while the Maharashtra RTS notification gives 3 working days for name correction and 3 working days or 30 days depending on home-visit requirement for other modifications."
+  }
+}

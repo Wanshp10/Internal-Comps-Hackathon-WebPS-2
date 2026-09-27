@@ -1,0 +1,418 @@
+{
+  "task_id": "INCOME_CERTIFICATE",
+  "task_name": "Income Certificate",
+  "category": "certificate",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Revenue and Forest Department",
+    "sub_department": "Revenue",
+    "designated_officer": "Nayab Tahsildar",
+    "office_type": "Revenue Administration"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "time_limit_days": 15,
+    "first_appellate_officer": "Tahsildar",
+    "second_appellate_officer": "Sub-Divisional Officer"
+  },
+  "application_information": {
+    "income_year_required": true,
+    "applicant_details_required": true,
+    "applicant_address_required": true,
+    "family_educational_details_required": true,
+    "beneficiary_information_required": true,
+    "family_farm_income_details_required": true,
+    "other_income_source_details_required": true,
+    "declaration_required": true
+  },
+  "document_requirements": {
+    "supporting_documents": [
+      "Income-related supporting attachment(s) as applicable",
+      "Self-Declaration"
+    ],
+    "additional_documents_listed_by_official_checklist": [
+      "SFC Certificate",
+      "Birth Certificate",
+      "Bonafide Certificate",
+      "School Leaving Certificate",
+      "Extract from primary school entry",
+      "Any other applicable document apart from the listed documents"
+    ]
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Register or log in to Aaple Sarkar",
+      "description": "Create an Aaple Sarkar profile or log in to an existing account.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Portal registration itself is not listed as the service fee."
+      },
+      "office": {
+        "department": "Aaple Sarkar",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/Registration/Register"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Registration",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Registration/Register",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Select Income Certificate service",
+      "description": "Select Revenue Department, then Revenue Services, then choose Income Certificate.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Service",
+        "location_rule": "Maharashtra"
+      },
+      "prerequisites": [
+        "Aaple Sarkar registration/login"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Fill income and applicant details",
+      "description": "Enter the requested income year, applicant details, address, family educational details, beneficiary information, farm income details and other income-source details.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Income Certificate service selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Income Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees%2C%20Procedure%2C%20Checklist_Income%20Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Accept declaration and upload supporting documents",
+      "description": "Accept the declaration and upload the supporting attachments/documents required for the application.",
+      "required_forms": [],
+      "required_documents": [
+        "Supporting income-related attachment(s) as applicable",
+        "Self-Declaration"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Official workflow confirms fee payment is required, but a single amount was not explicitly verified from the retrieved official source."
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application details completed"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Income Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees%2C%20Procedure%2C%20Checklist_Income%20Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Pay service fee and submit application",
+      "description": "Make the service-fee payment through the portal and complete submission of the application.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [
+          "online portal"
+        ],
+        "notes": "Fee payment is part of the official workflow; amount remains unset until explicitly verified from an official source."
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Declaration accepted",
+        "Supporting documents uploaded"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Income Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees%2C%20Procedure%2C%20Checklist_Income%20Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Tehsil Clerk verification",
+      "description": "The Tehsil Clerk verifies the application form, attachments and payment. A rectification request may be raised if corrections are required.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue Administration",
+        "office_name": "Tehsil Clerk",
+        "office_type": "Verification Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [
+        "STEP_7"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Income Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees%2C%20Procedure%2C%20Checklist_Income%20Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_7",
+      "title": "Awwal Karkun verification",
+      "description": "After Tehsil Clerk verification, the Awwal Karkun verifies the application, attachments and payment and may raise a rectification request if required.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue Administration",
+        "office_name": "Awwal Karkun",
+        "office_type": "Verification Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Tehsil Clerk verification completed"
+      ],
+      "depends_on": [
+        "STEP_6"
+      ],
+      "unlocks": [
+        "STEP_8"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Income Certificate Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/Fees%2C%20Procedure%2C%20Checklist_Income%20Certificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_8",
+      "title": "Final approval and certificate issuance",
+      "description": "After departmental verification and approval, the Income Certificate is issued through the service workflow.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": "Nayab Tahsildar",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Departmental verification completed"
+      ],
+      "depends_on": [
+        "STEP_7"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "certificate_issuance"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": 15,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}

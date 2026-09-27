@@ -1,0 +1,302 @@
+{
+  "task_id": "SENIOR_CITIZEN_CERTIFICATE",
+  "task_name": "Senior Citizen Certificate",
+  "category": "certificate",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Revenue and Forest Department",
+    "sub_department": "Revenue",
+    "designated_officer": "Tahsildar",
+    "office_type": "Revenue Administration"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "time_limit_days": 7,
+    "first_appellate_officer": "Sub-Divisional Officer",
+    "second_appellate_officer": "Additional Collector"
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Register or log in to Aaple Sarkar",
+      "description": "Create an Aaple Sarkar profile or log in to an existing account to access notified services.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Aaple Sarkar",
+        "office_name": null,
+        "office_type": "Online Portal",
+        "location_rule": null
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/Registration/Register"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Registration",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/Registration/Register",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Select Senior Citizen Certificate service",
+      "description": "Choose Senior Citizen Certificate under the Revenue Department.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Exact service fee not inserted because it was not explicitly verified from the official source used."
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Service",
+        "location_rule": "Maharashtra"
+      },
+      "prerequisites": [
+        "Aaple Sarkar login"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Provide documents requested by the official service",
+      "description": "Provide the identity, address, age and other supporting information requested by the official Senior Citizen Certificate service.",
+      "required_forms": [],
+      "required_documents": [
+        "Documents requested by the official Aaple Sarkar Senior Citizen Certificate service"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No synthetic document checklist has been inserted."
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": null,
+        "office_type": "Online Portal / Service Centre",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Senior Citizen Certificate service selected"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "service_centre"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Submit the application",
+      "description": "Submit the completed application and required supporting information through the official service.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee remains unset until explicitly verified from an official source."
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": "Tahsildar",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Required service information/documents provided"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "service_centre"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar View All Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Department processing",
+      "description": "The application is processed by the Tahsildar within the notified service timeline.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": "Tahsildar",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": 7,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Department Notified Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Receive the Senior Citizen Certificate",
+      "description": "After approval, the Senior Citizen Certificate is issued through the notified service.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": 0,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Revenue and Forest Department",
+        "office_name": "Tahsildar",
+        "office_type": "Designated Officer",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application approved"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "certificate_issuance"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Senior Citizen Certificate Service",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}

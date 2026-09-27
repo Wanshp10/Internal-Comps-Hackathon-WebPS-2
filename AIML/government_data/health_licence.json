@@ -1,0 +1,384 @@
+{
+  "task_id": "HEALTH_LICENCE",
+  "task_name": "Municipal Health Licence",
+  "category": "municipal_health_licence",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Applicable Municipal Health Department",
+    "sub_department": "Health Department",
+    "designated_officer": null,
+    "office_type": "Municipal Health Licensing Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "local_body_dependent": true,
+    "notes": "Exact licence category, fee, documents and processing authority depend on the Urban Local Body and business activity."
+  },
+  "known_official_branch": {
+    "mumbai_bmc": {
+      "authority": "Brihanmumbai Municipal Corporation",
+      "department": "Health Department",
+      "legal_reference": "Sections 394 / 412 of Mumbai Municipal Corporation Act",
+      "examples_of_covered_activities": [
+        "Eating house",
+        "Restaurant",
+        "Preparation of eatables",
+        "Milk and milk products",
+        "Aerated water",
+        "Ice factory",
+        "Certain manufacturing/storage/trade activities"
+      ],
+      "application_channel": "Citizen Facilitation Centre / BMC citizen service",
+      "processing": [
+        "Application submission",
+        "Department processing",
+        "Site inspection",
+        "Approval",
+        "Scheduled fee collection",
+        "Licence issuance"
+      ]
+    }
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify the competent local municipal authority",
+      "description": "Identify the Municipal Corporation or Municipal Council having jurisdiction over the establishment.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fees are local-body and activity dependent."
+      },
+      "office": {
+        "department": "Applicable Municipal Health Department",
+        "office_name": null,
+        "office_type": "Municipal Health Office",
+        "location_rule": "Based on establishment location"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "local_body_dependent"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Directorate of Municipal Administration",
+          "source_url": "https://mahadma.maharashtra.gov.in/en/",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Check whether the activity requires a Health Licence",
+      "description": "Determine whether the establishment's activity falls within the Health Licence categories prescribed by the competent municipal authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Municipal Health Department",
+        "office_name": null,
+        "office_type": "Health Licensing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Competent local authority identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "authority_check"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "BMC Health Licences u/s 394 / 412",
+          "source_url": "https://www.mcgm.gov.in/irj/portal/anonymous/qltabmohlic?guest_user=english",
+          "authority": "Brihanmumbai Municipal Corporation",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Obtain and complete the applicable Health Licence application",
+      "description": "Complete the Health Licence application prescribed by the competent local authority. For BMC, the application is handled through the Citizen Facilitation Centre/citizen service workflow.",
+      "required_forms": [
+        "Applicable Municipal Health Licence application"
+      ],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Exact fee is determined by the local authority and licence category."
+      },
+      "office": {
+        "department": "Municipal Health Department",
+        "office_name": null,
+        "office_type": "Citizen Facilitation Centre / Municipal Health Office",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Health Licence requirement confirmed"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": "https://www.mcgm.gov.in/irj/portal/anonymous/qltabmohlic?guest_user=english"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "BMC Health Licence Application Process",
+          "source_url": "https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HelpHealthLicense",
+          "authority": "Brihanmumbai Municipal Corporation",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Provide supporting premises and business documents",
+      "description": "Provide the supporting documents required by the competent Health Department. In Mumbai, BMC lists proof of legal possession and proof of commercial use among the required categories.",
+      "required_forms": [],
+      "required_documents": [
+        "Local-body-required proof of premises",
+        "Local-body-required proof of permitted commercial use",
+        "Other documents specified for the licence category"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Document requirements vary by local body and activity."
+      },
+      "office": {
+        "department": "Municipal Health Department",
+        "office_name": null,
+        "office_type": "Health Licensing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Health Licence application prepared"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "document_submission"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "BMC Health Licence FAQ",
+          "source_url": "https://www.mcgm.gov.in/irj/go/km/docs/documents/HomePage%20Data/FAQ/SANKALAN%20FAQ%20-ENGLISH%20COPY-%20MCGM%20MUMBAI.pdf",
+          "authority": "Brihanmumbai Municipal Corporation",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Submit the Health Licence application",
+      "description": "Submit the completed application with the required documents to the competent municipal Health Department.",
+      "required_forms": [
+        "Completed Health Licence application"
+      ],
+      "required_documents": [
+        "Required premises/business supporting documents"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Scheduled licence fees are collected according to the applicable local authority rules."
+      },
+      "office": {
+        "department": "Municipal Health Department",
+        "office_name": null,
+        "office_type": "Municipal Health Licensing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application completed",
+        "Supporting documents ready"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "municipal_office"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "BMC Health Licence Application Process",
+          "source_url": "https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HelpHealthLicense",
+          "authority": "Brihanmumbai Municipal Corporation",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Site inspection and departmental verification",
+      "description": "The competent municipal Health Department processes the application and may conduct a site inspection before approval.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Municipal Health Department",
+        "office_name": null,
+        "office_type": "Health Department / Inspection Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [
+        "STEP_7"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing",
+          "site_inspection"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "BMC Health Licence Processing",
+          "source_url": "https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HelpHealthLicense",
+          "authority": "Brihanmumbai Municipal Corporation",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_7",
+      "title": "Pay scheduled licence fee and receive Health Licence",
+      "description": "After approval, pay the applicable scheduled fee and receive the Health Licence from the competent municipal authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [
+          "authority_dependent"
+        ],
+        "notes": "BMC states scheduled fees are collected after inspection and approval; no universal Maharashtra amount is inserted."
+      },
+      "office": {
+        "department": "Municipal Health Department",
+        "office_name": null,
+        "office_type": "Licence Issuing Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application approved"
+      ],
+      "depends_on": [
+        "STEP_6"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "licence_issuance"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "BMC Health Licence Application Process",
+          "source_url": "https://portal.mcgm.gov.in/irj/servlet/prt/portal/prtroot/com.mcgm.acitizenservices_healthservices.HelpHealthLicense",
+          "authority": "Brihanmumbai Municipal Corporation",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false,
+    "notes": "Mumbai/BMC procedure is explicitly sourced. Other Maharashtra ULBs may prescribe different documents, fees and processing rules."
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "task_id": "DEATH_CERTIFICATE",
+  "task_name": "Death Certificate",
+  "category": "certificate",
+  "jurisdiction": {
+    "state": "Maharashtra",
+    "district": null,
+    "local_body": null
+  },
+  "department": {
+    "name": "Rural Development Department / Urban Development Department",
+    "sub_department": null,
+    "designated_officer": null,
+    "office_type": "Local Death Registration Authority"
+  },
+  "eligibility": [],
+  "service_metadata": {
+    "rural": {
+      "time_limit_days": 5,
+      "designated_officer": "Gram Sevak",
+      "first_appellate_officer": "Assistant Block Development Officer",
+      "second_appellate_officer": "Block Development Officer"
+    },
+    "urban": {
+      "time_limit_days": 3,
+      "designated_officer": "Deputy Registrar"
+    }
+  },
+  "steps": [
+    {
+      "step_id": "STEP_1",
+      "title": "Identify the local registration authority",
+      "description": "Determine whether the death falls under a rural or urban local authority and identify the authority having jurisdiction over the place of death.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No single statewide fee is inserted without explicit official confirmation."
+      },
+      "office": {
+        "department": "Local Death Registration Authority",
+        "office_name": null,
+        "office_type": "Gram Panchayat / Municipal Death Registration Office",
+        "location_rule": "Authority having jurisdiction over the place of death"
+      },
+      "prerequisites": [],
+      "depends_on": [],
+      "unlocks": [
+        "STEP_2"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_2",
+      "title": "Prepare the death registration application",
+      "description": "Prepare the applicable death registration form and information required by the competent registration authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Local Death Registration Authority",
+        "office_name": null,
+        "office_type": "Registrar Office",
+        "location_rule": "Based on place of death"
+      },
+      "prerequisites": [
+        "Jurisdiction identified"
+      ],
+      "depends_on": [
+        "STEP_1"
+      ],
+      "unlocks": [
+        "STEP_3"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Death Registration Certificate - Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/MH%20EODB_Fees%2CProcedure%2CChecklist_DeathCertificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_3",
+      "title": "Provide supporting documents required by the authority",
+      "description": "Provide the documents required by the official death-registration checklist and the competent local registration authority.",
+      "required_forms": [],
+      "required_documents": [
+        "Documents required by the official death-registration checklist"
+      ],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "No unsupported document list or fee amount is inserted."
+      },
+      "office": {
+        "department": "Local Death Registration Authority",
+        "office_name": null,
+        "office_type": "Registrar Office",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Death registration application prepared"
+      ],
+      "depends_on": [
+        "STEP_2"
+      ],
+      "unlocks": [
+        "STEP_4"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Death Registration Certificate - Fees, Procedure and Checklist",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/pdf/MH%20EODB_Fees%2CProcedure%2CChecklist_DeathCertificate.pdf",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_4",
+      "title": "Submit the death registration request",
+      "description": "Submit the completed application and required supporting documents to the competent local death registration authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": "Fee remains unset until explicitly verified from the applicable official authority."
+      },
+      "office": {
+        "department": "Rural Development Department / Urban Development Department",
+        "office_name": null,
+        "office_type": "Death Registration Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application complete",
+        "Required documents available"
+      ],
+      "depends_on": [
+        "STEP_3"
+      ],
+      "unlocks": [
+        "STEP_5"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "online",
+          "offline"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_5",
+      "title": "Authority verification and processing",
+      "description": "The competent registration authority verifies the submitted information and processes the certificate request.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Rural Development Department / Urban Development Department",
+        "office_name": null,
+        "office_type": "Designated Registration Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Application submitted"
+      ],
+      "depends_on": [
+        "STEP_4"
+      ],
+      "unlocks": [
+        "STEP_6"
+      ],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "department_processing"
+        ],
+        "application_link": null
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar Citizen Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/CitizenServices_RTS",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    },
+    {
+      "step_id": "STEP_6",
+      "title": "Death certificate issuance",
+      "description": "After successful verification and processing, the death certificate is issued by the competent registration authority.",
+      "required_forms": [],
+      "required_documents": [],
+      "fees": {
+        "amount": null,
+        "currency": "INR",
+        "payment_method": [],
+        "notes": null
+      },
+      "office": {
+        "department": "Rural Development Department / Urban Development Department",
+        "office_name": null,
+        "office_type": "Death Registration Authority",
+        "location_rule": null
+      },
+      "prerequisites": [
+        "Verification completed"
+      ],
+      "depends_on": [
+        "STEP_5"
+      ],
+      "unlocks": [],
+      "can_run_in_parallel": false,
+      "application": {
+        "mode": [
+          "certificate_issuance"
+        ],
+        "application_link": "https://aaplesarkar.mahaonline.gov.in/"
+      },
+      "time_limit_days": null,
+      "official_sources": [
+        {
+          "source_title": "Aaple Sarkar View All Services",
+          "source_url": "https://aaplesarkar.mahaonline.gov.in/en/CommonForm/ViewAllServices",
+          "authority": "Government of Maharashtra",
+          "last_verified": "2026-09-27",
+          "source_type": "official_government"
+        }
+      ]
+    }
+  ],
+  "status_options": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "LOCKED"
+  ],
+  "source_freshness": {
+    "last_verified": "2026-09-27",
+    "needs_review": false
+  }
+}
