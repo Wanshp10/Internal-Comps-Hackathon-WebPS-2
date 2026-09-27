@@ -7,6 +7,7 @@ import taskRoutes from "./routes/taskRoutes.js";
 import procedureRoutes from "./routes/procedureRoutes.js";
 import roadmapRoutes from "./routes/roadmapRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
+import sourceRoutes from "./routes/sourceRoutes.js";
 
 const app = express();
 
@@ -94,6 +95,14 @@ app.use(
 app.use(
   "/api/v1/admin",
   adminRoutes
+);
+
+// ------------------------------------
+// Source Routes
+// ------------------------------------
+app.use(
+  "/api/v1/sources",
+  sourceRoutes
 );
 
 // ------------------------------------
