@@ -1,11 +1,20 @@
-
 from pathlib import Path
 import json
+import os
 import re
-import joblib
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
+
+from gemini_service import (
+    gemini_analyze_query,
+    gemini_generate_procedure,
+    is_configured as gemini_is_configured,
+)
 
 
 # ============================================================
@@ -13,121 +22,120 @@ from pydantic import BaseModel
 # ============================================================
 
 BASE_DIR = Path(__file__).resolve().parent
-
-MODEL_PATH = BASE_DIR / "models" / "intent_classifier.joblib"
-VECTORIZER_PATH = BASE_DIR / "models" / "tfidf_vectorizer.joblib"
 GOV_DATA_DIR = BASE_DIR / "government_data"
+TASK_CATALOG_PATH = GOV_DATA_DIR / "task_catalog.json"
 
 
 # ============================================================
-# LOAD MODEL
+# JSON LOADER
 # ============================================================
 
-if not MODEL_PATH.exists():
-    raise FileNotFoundError(f"Intent model not found: {MODEL_PATH}")
+def load_json_file(path: Path, description: str):
+    if not path.exists():
+        raise FileNotFoundError(
+            f"{description} not found: {path}"
+        )
 
-if not VECTORIZER_PATH.exists():
-    raise FileNotFoundError(f"Vectorizer not found: {VECTORIZER_PATH}")
-
-intent_model = joblib.load(MODEL_PATH)
-tfidf_vectorizer = joblib.load(VECTORIZER_PATH)
+    with open(
+        path,
+        "r",
+        encoding="utf-8",
+    ) as file:
+        return json.load(file)
 
 
 # ============================================================
-# CONFIG
+# TASK CATALOG
 # ============================================================
 
-CONFIDENCE_THRESHOLD = 0.65
+TASK_CATALOG = load_json_file(
+    TASK_CATALOG_PATH,
+    "task_catalog.json",
+)
 
-KNOWN_CUSTOM_INTENTS = {
-    "OPEN_FOOD_BUSINESS",
-    "BIRTH_CERTIFICATE",
-    "ORGANIZE_PUBLIC_EVENT",
-    "DOMICILE_CERTIFICATE_MAHARASHTRA"
+
+SUPPORTED_TASK_IDS = {
+    str(task.get("task_id", ""))
+    .strip()
+    .upper()
+    for task in TASK_CATALOG
+    if task.get("task_id")
 }
 
-MAHARASHTRA_CITIES = [
-    "Mumbai",
-    "Pune",
-    "Thane",
-    "Navi Mumbai",
-    "Nagpur",
-    "Nashik",
-    "Kolhapur",
-    "Solapur",
-    "Amravati",
-    "Kalyan",
-    "Dombivli",
-    "Chhatrapati Sambhajinagar"
-]
 
-OUTSIDE_MAHARASHTRA_CITIES = [
-    "Delhi",
-    "New Delhi",
-    "Bangalore",
-    "Bengaluru",
-    "Hyderabad",
-    "Chennai",
-    "Kolkata",
-    "Ahmedabad",
-    "Jaipur",
-    "Lucknow",
-    "Surat",
-    "Indore",
-    "Bhopal",
-    "Chandigarh",
-    "Patna",
-    "Ranchi",
-    "Kochi",
-    "Gurgaon",
-    "Gurugram",
-    "Noida"
-]
+TASK_ALIASES = {
+    "DOMICILE_CERTIFICATE_MAHARASHTRA":
+        "DOMICILE_CERTIFICATE",
 
-FOOD_BUSINESS_TYPES = [
-    "restaurant",
-    "bakery",
-    "cafe",
-    "cloud kitchen",
-    "food stall",
-    "juice centre",
-    "juice center",
-    "juice shop",
-    "snack centre",
-    "snack center",
-    "eatery",
-    "food outlet",
-    "tiffin service",
-    "catering business",
-    "sweet shop",
-    "fast food shop",
-    "tea cafe",
-    "home kitchen"
-]
+    "ORGANIZE_PUBLIC_EVENT":
+        "PUBLIC_EVENT_PERMISSION",
+}
 
-EVENT_TYPES = [
-    "college fest",
-    "cultural program",
-    "music event",
-    "community gathering",
-    "outdoor festival",
-    "sports event",
-    "public exhibition",
-    "stage show",
-    "charity event",
-    "community function",
-    "public celebration",
-    "college cultural event",
-    "outdoor function",
-    "public performance",
-    "public event"
-]
+
+TASK_NAME_LOOKUP = {}
+
+for task in TASK_CATALOG:
+
+    task_id = str(
+        task.get("task_id", "")
+    ).strip().upper()
+
+    task_name = str(
+        task.get("task_name", "")
+    ).strip()
+
+    if not task_id:
+        continue
+
+    if task_name:
+        TASK_NAME_LOOKUP[
+            task_name
+        ] = task_id
+
+        TASK_NAME_LOOKUP[
+            re.sub(
+                r"[^A-Z0-9]+",
+                "_",
+                task_name.upper(),
+            ).strip("_")
+        ] = task_id
+
+
+# ============================================================
+# REQUIRED USER INFORMATION
+# ============================================================
 
 REQUIRED_FIELDS = {
-    "OPEN_FOOD_BUSINESS": ["location", "business_type"],
-    "ORGANIZE_PUBLIC_EVENT": ["location", "event_type"],
     "BIRTH_CERTIFICATE": ["location"],
-    "DOMICILE_CERTIFICATE_MAHARASHTRA": []
+    "DEATH_CERTIFICATE": ["location"],
+    "MARRIAGE_REGISTRATION": ["location"],
+    "DOMICILE_CERTIFICATE": ["location"],
+    "INCOME_CERTIFICATE": ["location"],
+    "CASTE_CERTIFICATE": ["location"],
+    "NON_CREAMY_LAYER_CERTIFICATE": ["location"],
+    "NEW_RATION_CARD": ["location"],
+    "RATION_CARD_UPDATE": ["location"],
+    "SHOP_ESTABLISHMENT_REGISTRATION": ["location"],
+    "OPEN_FOOD_BUSINESS": [
+        "location",
+        "business_type",
+    ],
+    "PROPERTY_CIVIC_SERVICE": ["location"],
+    "NEW_WATER_CONNECTION": ["location"],
+    "TRADE_LICENCE": ["location"],
+    "HEALTH_LICENCE": ["location"],
+    "BUILDING_PERMIT": ["location"],
+    "PUBLIC_EVENT_PERMISSION": [
+        "location",
+        "event_type",
+    ],
+    "ASSEMBLY_PROCESSION_PERMISSION": [
+        "location",
+    ],
+    "SENIOR_CITIZEN_CERTIFICATE": [
+        "location",
+    ],
+    "POLICE_CLEARANCE": ["location"],
 }
 
 
@@ -140,287 +148,160 @@ class QueryRequest(BaseModel):
 
 
 # ============================================================
-# HELPERS
+# STATUS
 # ============================================================
 
-def find_phrase(text, phrases):
-    text_lower = text.lower()
+def refine_status(result):
 
-    for phrase in sorted(phrases, key=len, reverse=True):
-        if phrase.lower() in text_lower:
-            return phrase
+    intent = str(
+        result.get("intent", "")
+    ).strip().upper()
 
-    return None
+    entities = result.get(
+        "entities"
+    )
 
-
-def extract_location_with_scope(text):
-    text_lower = text.lower()
-
-    for city in sorted(MAHARASHTRA_CITIES, key=len, reverse=True):
-        if city.lower() in text_lower:
-            return city, "MAHARASHTRA"
-
-    for city in sorted(
-        OUTSIDE_MAHARASHTRA_CITIES,
-        key=len,
-        reverse=True
+    if not isinstance(
+        entities,
+        dict,
     ):
-        if city.lower() in text_lower:
-            return city, "OUTSIDE_MAHARASHTRA"
+        entities = {}
 
-    return None, "MISSING"
+    result["entities"] = entities
 
+    if intent == "GENERAL_CIVIC_TASK":
 
-def extract_birth_subtype(text):
-    t = text.lower()
+        result["status"] = "OUT_OF_SCOPE"
+        result["missing_fields"] = []
+        result["procedure"] = None
 
-    if any(x in t for x in [
-        "delayed",
-        "not registered",
-        "never registered",
-        "late registration"
-    ]):
-        return "delayed_registration"
+        return result
 
-    if any(x in t for x in [
-        "correction",
-        "spelling mistake",
-        "name correction",
-        "date correction",
-        "wrong name",
-        "wrong date"
-    ]):
-        return "correction"
-
-    if any(x in t for x in [
-        "duplicate",
-        "copy",
-        "reissue",
-        "old birth certificate"
-    ]):
-        return "duplicate_copy"
-
-    if any(x in t for x in [
-        "newborn",
-        "new birth",
-        "birth registration",
-        "register birth",
-        "register the birth",
-        "baby born",
-        "child born"
-    ]):
-        return "new_registration"
-
-    return None
-
-
-def extract_domicile_purpose(text):
-    t = text.lower()
-
-    if any(x in t for x in [
-        "admission",
-        "college",
-        "university",
-        "education"
-    ]):
-        return "admission"
-
-    if "scholarship" in t:
-        return "scholarship"
-
-    if any(x in t for x in [
-        "government job",
-        "govt job",
-        "job application"
-    ]):
-        return "government_job"
-
-    if any(x in t for x in [
-        "state benefit",
-        "government scheme",
-        "govt scheme",
-        "scheme"
-    ]):
-        return "state_benefit"
-
-    return None
-
-
-def extract_entities(text, predicted_intent):
-    location, _ = extract_location_with_scope(text)
-
-    entities = {
-        "location": location,
-        "business_type": None,
-        "event_type": None,
-        "birth_subtype": None,
-        "domicile_purpose": None
-    }
-
-    if predicted_intent == "OPEN_FOOD_BUSINESS":
-        entities["business_type"] = find_phrase(
-            text,
-            FOOD_BUSINESS_TYPES
-        )
-
-    elif predicted_intent == "ORGANIZE_PUBLIC_EVENT":
-        entities["event_type"] = find_phrase(
-            text,
-            EVENT_TYPES
-        )
-
-    elif predicted_intent == "BIRTH_CERTIFICATE":
-        entities["birth_subtype"] = extract_birth_subtype(text)
-
-    elif predicted_intent == "DOMICILE_CERTIFICATE_MAHARASHTRA":
-        entities["domicile_purpose"] = extract_domicile_purpose(text)
-
-    return entities
-
-
-def predict_intent(text):
-    vector = tfidf_vectorizer.transform([text])
-
-    predicted_intent = intent_model.predict(vector)[0]
-
-    probabilities = intent_model.predict_proba(vector)[0]
-
-    confidence = float(max(probabilities))
-
-    return predicted_intent, confidence
-
-
-def normalize_intent_route(predicted_intent):
-    if predicted_intent in KNOWN_CUSTOM_INTENTS:
-        return {
-            "intent": predicted_intent,
-            "route": "CUSTOM_FAST_PATH"
-        }
-
-    return {
-        "intent": "GENERAL_CIVIC_TASK",
-        "route": "GENERIC_CIVIC_PATH"
-    }
-
-
-def detect_missing_fields(intent, entities, location_scope):
-    if location_scope == "OUTSIDE_MAHARASHTRA":
-        return "OUT_OF_SCOPE", []
-
-    required = REQUIRED_FIELDS.get(intent, [])
+    required = REQUIRED_FIELDS.get(
+        intent,
+        [],
+    )
 
     missing = [
         field
         for field in required
         if not entities.get(field)
+        and not result.get(field)
     ]
 
     if missing:
-        return "NEEDS_INFO", missing
 
-    return "OK", []
+        result["status"] = "NEEDS_INFO"
+        result["missing_fields"] = missing
+        result["procedure"] = None
+
+        return result
+
+    result["status"] = "OK"
+    result["missing_fields"] = []
+
+    procedure = result.get(
+        "procedure"
+    )
+
+    if isinstance(
+        procedure,
+        dict,
+    ):
+
+        jurisdiction = procedure.get(
+            "jurisdiction"
+        )
+
+        if not isinstance(
+            jurisdiction,
+            dict,
+        ):
+            jurisdiction = {}
+
+        jurisdiction.setdefault(
+            "state",
+            "Maharashtra",
+        )
+
+        if (
+            result.get("location")
+            and result.get("location_scope")
+            == "MAHARASHTRA"
+        ):
+            if (
+                str(
+                    result.get("location")
+                ).strip().lower()
+                == "maharashtra"
+            ):
+                jurisdiction["state"] = (
+                    "Maharashtra"
+                )
+
+        procedure["jurisdiction"] = (
+            jurisdiction
+        )
+
+        procedure["task_id"] = (
+            procedure.get("task_id")
+            or intent
+        )
+
+        procedure["task_name"] = (
+            procedure.get("task_name")
+            or next(
+                (
+                    task.get("task_name")
+                    for task in TASK_CATALOG
+                    if str(
+                        task.get(
+                            "task_id",
+                            "",
+                        )
+                    ).strip().upper()
+                    == intent
+                ),
+                intent.replace(
+                    "_",
+                    " ",
+                ).title(),
+            )
+        )
+
+        result["procedure"] = procedure
+
+    return result
 
 
-def analyze_query_core(user_query):
+# ============================================================
+# MAIN GEMINI ANALYSIS
+# ============================================================
+
+def analyze_query_core(
+    user_query: str,
+):
+
     if not user_query or not user_query.strip():
-        raise ValueError("Query cannot be empty.")
-
-    normalized_query = user_query.strip()
-
-    raw_intent, confidence = predict_intent(normalized_query)
-
-    route_info = normalize_intent_route(raw_intent)
-
-    final_intent = route_info["intent"]
-    route = route_info["route"]
-
-    location, location_scope = extract_location_with_scope(
-        normalized_query
-    )
-
-    entity_intent = (
-        raw_intent
-        if raw_intent in KNOWN_CUSTOM_INTENTS
-        else final_intent
-    )
-
-    entities = extract_entities(
-        normalized_query,
-        entity_intent
-    )
-
-    entities["location"] = location
-
-    if route == "CUSTOM_FAST_PATH":
-        status, missing_fields = detect_missing_fields(
-            raw_intent,
-            entities,
-            location_scope
-        )
-    else:
-        if location_scope == "OUTSIDE_MAHARASHTRA":
-            status = "OUT_OF_SCOPE"
-        else:
-            status = "OK"
-
-        missing_fields = []
-
-    intent_source = (
-        "CUSTOM_MODEL"
-        if confidence >= CONFIDENCE_THRESHOLD
-        else "CUSTOM_MODEL_LOW_CONFIDENCE"
-    )
-
-    return {
-        "query": user_query,
-        "normalized_query": normalized_query,
-        "intent": final_intent,
-        "route": route,
-        "location": location,
-        "location_scope": location_scope,
-        "entities": entities,
-        "confidence": confidence,
-        "intent_source": intent_source,
-        "status": status,
-        "missing_fields": missing_fields
-    }
-
-
-def load_task_mapping():
-    mapping_path = GOV_DATA_DIR / "task_mapping.json"
-
-    if not mapping_path.exists():
-        raise FileNotFoundError(
-            f"task_mapping.json not found: {mapping_path}"
+        raise ValueError(
+            "Query cannot be empty."
         )
 
-    with open(mapping_path, "r", encoding="utf-8") as f:
-        return json.load(f)
+    clean_query = user_query.strip()
 
+    result = gemini_analyze_query(
+        user_query=clean_query,
+        supported_tasks=TASK_CATALOG,
+        supported_task_ids=SUPPORTED_TASK_IDS,
+        aliases=TASK_ALIASES,
+        task_name_lookup=TASK_NAME_LOOKUP,
+    )
 
-def get_task_data(task_id):
-    mapping = load_task_mapping()
+    result = refine_status(
+        result
+    )
 
-    if task_id not in mapping:
-        raise KeyError(task_id)
-
-    target = mapping[task_id]
-
-    if target == "dynamic_retrieval":
-        return {
-            "task_id": task_id,
-            "route": "dynamic_retrieval"
-        }
-
-    task_path = GOV_DATA_DIR / target
-
-    if not task_path.exists():
-        raise FileNotFoundError(
-            f"Government data file not found: {task_path}"
-        )
-
-    with open(task_path, "r", encoding="utf-8") as f:
-        return json.load(f)
+    return result
 
 
 # ============================================================
@@ -429,58 +310,184 @@ def get_task_data(task_id):
 
 app = FastAPI(
     title="PSWB02 Civic Task Navigator AI",
-    version="1.0.0",
+    version="4.0.0",
     description=(
-        "AI service for Maharashtra civic-task intent routing, "
-        "entity extraction and verified government workflow retrieval."
-    )
+        "Gemini-only civic service understanding "
+        "and complete procedure generation."
+    ),
 )
 
 
+# ============================================================
+# ROOT
+# ============================================================
+
 @app.get("/")
 def root():
+
     return {
-        "service": "PSWB02 Civic Task Navigator AI",
-        "status": "running"
+        "service":
+            "PSWB02 Civic Task Navigator AI",
+
+        "status":
+            "running",
+
+        "ai_mode":
+            "GEMINI_ONLY",
+
+        "procedure_generation":
+            "GEMINI",
     }
 
+
+# ============================================================
+# HEALTH
+# ============================================================
 
 @app.get("/health")
 def health():
+
     return {
-        "status": "ok",
-        "model_loaded": True,
-        "government_data_directory": GOV_DATA_DIR.exists()
+        "status":
+            "ok",
+
+        "model_loaded":
+            False,
+
+        "government_data_directory":
+            GOV_DATA_DIR.exists(),
+
+        "gemini_configured":
+            gemini_is_configured(),
+
+        "gemini_model":
+            os.getenv(
+                "GEMINI_MODEL",
+                "gemini-3.5-flash-lite",
+            ),
+
+        "supported_task_count":
+            len(SUPPORTED_TASK_IDS),
+
+        "ai_mode":
+            "GEMINI_ONLY",
+
+        "procedure_generation":
+            "GEMINI",
     }
 
 
-@app.post("/ai/analyze")
-def analyze(request: QueryRequest):
-    try:
-        return analyze_query_core(request.query)
+# ============================================================
+# ANALYZE
+# ============================================================
 
-    except Exception as e:
+@app.post("/ai/analyze")
+def analyze(
+    request: QueryRequest,
+):
+
+    try:
+
+        result = analyze_query_core(
+            request.query
+        )
+
+        return result
+
+    except ValueError as error:
+
+        raise HTTPException(
+            status_code=400,
+            detail=str(error),
+        )
+
+    except Exception as error:
+
+        print(
+            "AI analysis error:",
+            str(error),
+        )
+
         raise HTTPException(
             status_code=500,
-            detail=str(e)
+            detail=str(error),
         )
 
 
-@app.get("/government/task/{task_id}")
-def government_task(task_id: str):
-    task_id = task_id.upper()
+# ============================================================
+# GEMINI PROCEDURE ENDPOINT
+# ============================================================
 
-    try:
-        return get_task_data(task_id)
+@app.get(
+    "/government/task/{task_id}"
+)
+def government_task(
+    task_id: str,
+):
 
-    except KeyError:
+    normalized_task_id = (
+        str(task_id)
+        .strip()
+        .upper()
+    )
+
+    if (
+        normalized_task_id
+        not in SUPPORTED_TASK_IDS
+    ):
         raise HTTPException(
             status_code=404,
-            detail=f"Unknown task_id: {task_id}"
+            detail=(
+                f"Unknown task_id: "
+                f"{normalized_task_id}"
+            ),
         )
 
-    except Exception as e:
+    task = next(
+        (
+            item
+            for item in TASK_CATALOG
+            if str(
+                item.get(
+                    "task_id",
+                    "",
+                )
+            ).strip().upper()
+            == normalized_task_id
+        ),
+        {
+            "task_id":
+                normalized_task_id,
+
+            "task_name":
+                normalized_task_id
+                .replace(
+                    "_",
+                    " ",
+                )
+                .title(),
+        },
+    )
+
+    try:
+
+        procedure = (
+            gemini_generate_procedure(
+                task_id=normalized_task_id,
+                supported_tasks=[task],
+            )
+        )
+
+        return procedure
+
+    except Exception as error:
+
+        print(
+            "Gemini procedure generation error:",
+            str(error),
+        )
+
         raise HTTPException(
             status_code=500,
-            detail=str(e)
+            detail=str(error),
         )

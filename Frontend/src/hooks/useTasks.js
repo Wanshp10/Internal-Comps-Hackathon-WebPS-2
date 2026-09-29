@@ -1,14 +1,45 @@
 import { useEffect, useState } from "react";
-import { getTasks } from "../services/taskService.js";
+import { initialTasks } from "../data/tasks.js";
 
 export function useTasks() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
   useEffect(() => {
-    let alive = true;
-    getTasks().then(data => { if (alive) setTasks(data); })
-      .finally(() => { if (alive) setLoading(false); });
-    return () => { alive = false; };
+    setLoading(true);
+
+    try {
+      const safeTasks = Array.isArray(
+        initialTasks,
+      )
+        ? initialTasks
+        : [];
+
+      setTasks(safeTasks);
+      setError("");
+    } catch (requestError) {
+      console.error(
+        "Failed to load tasks:",
+        requestError,
+      );
+
+      setTasks([]);
+      setError(
+        "Unable to load service catalogue.",
+      );
+    } finally {
+      setLoading(false);
+    }
   }, []);
-  return { tasks, loading, setTasks };
+
+  return {
+    tasks: Array.isArray(tasks)
+      ? tasks
+      : [],
+    loading,
+    error,
+  };
 }
+
+export default useTasks;

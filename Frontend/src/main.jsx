@@ -1,14 +1,29 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+} from "react-router-dom";
+
 import App from "./App.jsx";
-import { ThemeProvider } from "./context/ThemeContext.jsx";
+import {
+  ThemeProvider,
+} from "./context/ThemeContext.jsx";
+
 import "./styles/index.css";
 
-createRoot(document.getElementById("root")).render(
+createRoot(
+  document.getElementById("root"),
+).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider><App /></ThemeProvider>
+    <BrowserRouter
+      future={{
+        v7_startTransition: true,
+        v7_relativeSplatPath: true,
+      }}
+    >
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

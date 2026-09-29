@@ -230,6 +230,13 @@ const stepSchema = new mongoose.Schema(
       },
     ],
 
+    instructions: [
+      {
+        type: String,
+        trim: true,
+      },
+    ],
+
     fees: {
       type: feesSchema,
       default: () => ({}),
