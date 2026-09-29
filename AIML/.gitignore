@@ -97,3 +97,32 @@ dist/
 
 # Keep project configuration/data catalogs if needed
 !government_data/*.json
+
+__pycache__/
+*.py[cod]
+
+.venv/
+venv/
+env/
+.conda/
+
+.env
+.env.*
+!.env.example
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
+
+*.log
+.pytest_cache/
+.coverage
+htmlcov/
+
+build/
+dist/
+*.egg-info/
+
+.ipynb_checkpoints/
