@@ -5,13 +5,7 @@ import {
   createTaskFromAIResult,
 } from "../services/taskPipelineService.js";
 
-// ------------------------------------
-// Create task from existing AI result
-// ------------------------------------
-const createTaskFromAnalysis = async (
-  req,
-  res
-) => {
+const createTaskFromAnalysis = async (req, res) => {
   try {
     const aiResult = req.body;
 
@@ -22,32 +16,25 @@ const createTaskFromAnalysis = async (
     ) {
       return res.status(400).json({
         success: false,
-        message:
-          "AI analysis data is required",
+        message: "AI analysis data is required",
       });
     }
 
-    if (
-      !aiResult.intent &&
-      !aiResult.task_id
-    ) {
+    if (!aiResult.intent && !aiResult.task_id) {
       return res.status(400).json({
         success: false,
-        message:
-          "intent or task_id is required",
+        message: "intent or task_id is required",
       });
     }
 
-    const task =
-      await createTaskFromAIResult(
-        aiResult,
-        aiResult.query || ""
-      );
+    const task = await createTaskFromAIResult(
+      aiResult,
+      aiResult.query || ""
+    );
 
     return res.status(201).json({
       success: true,
-      message:
-        "Task created successfully",
+      message: "Task created successfully",
       data: {
         taskId: task._id,
         task,
@@ -68,13 +55,7 @@ const createTaskFromAnalysis = async (
   }
 };
 
-// ------------------------------------
-// Final end-to-end pipeline
-// ------------------------------------
-const analyzeUserTask = async (
-  req,
-  res
-) => {
+const analyzeUserTask = async (req, res) => {
   try {
     const { query } = req.body;
 
@@ -85,46 +66,27 @@ const analyzeUserTask = async (
     ) {
       return res.status(400).json({
         success: false,
-        message:
-          "Query is required",
+        message: "Query is required",
       });
     }
 
-    const result =
-      await processUserTask(
-        query.trim()
-      );
+    const result = await processUserTask(
+      query.trim()
+    );
 
     return res.status(201).json({
       success: true,
-
       message:
         "Task analyzed and roadmap generated successfully",
-
       data: {
-        taskId:
-          result.task._id,
-
-        procedureId:
-          result.procedure._id,
-
-        roadmapId:
-          result.roadmap._id,
-
-        aiResponseType:
-          result.aiResponseType,
-
-        analysis:
-          result.aiResult,
-
-        task:
-          result.task,
-
-        procedure:
-          result.procedure,
-
-        roadmap:
-          result.roadmap,
+        taskId: result.task._id,
+        procedureId: result.procedure._id,
+        roadmapId: result.roadmap._id,
+        aiResponseType: result.aiResponseType,
+        analysis: result.aiResult,
+        task: result.task,
+        procedure: result.procedure,
+        roadmap: result.roadmap,
       },
     });
   } catch (error) {
@@ -157,14 +119,49 @@ const analyzeUserTask = async (
 
     if (
       error.message ===
+      "Unsupported civic service request"
+    ) {
+      return res.status(422).json({
+        success: false,
+        message:
+          "This request is outside the supported civic services.",
+        details: error.details || [],
+      });
+    }
+
+    if (
+      error.message ===
+      "AI response requires additional information"
+    ) {
+      return res.status(422).json({
+        success: false,
+        message:
+          "More information is required before a roadmap can be generated.",
+        details: error.details || [],
+      });
+    }
+
+    if (
+      error.message ===
       "AI response validation failed"
     ) {
       return res.status(502).json({
         success: false,
         message:
           "AI returned an invalid response",
-        details:
-          error.details || [],
+        details: error.details || [],
+      });
+    }
+
+    if (
+      error.message ===
+      "Gemini procedure validation failed"
+    ) {
+      return res.status(502).json({
+        success: false,
+        message:
+          "Gemini returned an invalid civic procedure",
+        details: error.details || [],
       });
     }
 
@@ -190,6 +187,20 @@ const analyzeUserTask = async (
       });
     }
 
+    if (
+      error.message.startsWith(
+        "Gemini API request failed:"
+      ) ||
+      error.message.startsWith(
+        "Gemini returned"
+      )
+    ) {
+      return res.status(502).json({
+        success: false,
+        message: error.message,
+      });
+    }
+
     return res.status(500).json({
       success: false,
       message:
@@ -199,24 +210,16 @@ const analyzeUserTask = async (
   }
 };
 
-// ------------------------------------
-// Get Task
-// ------------------------------------
-const getTaskById = async (
-  req,
-  res
-) => {
+const getTaskById = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const task =
-      await Task.findById(id);
+    const task = await Task.findById(id);
 
     if (!task) {
       return res.status(404).json({
         success: false,
-        message:
-          "Task not found",
+        message: "Task not found",
       });
     }
 
@@ -232,8 +235,7 @@ const getTaskById = async (
 
     return res.status(500).json({
       success: false,
-      message:
-        "Failed to fetch task",
+      message: "Failed to fetch task",
     });
   }
 };

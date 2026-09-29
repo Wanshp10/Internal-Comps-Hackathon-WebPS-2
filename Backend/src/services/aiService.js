@@ -1,90 +1,159 @@
 import axios from "axios";
 
-// ------------------------------------
-// Call Python AI/ML service
-// ------------------------------------
-const analyzeTask = async (query) => {
-  const baseUrl = process.env.AIML_URL;
+
+// ============================================================
+// CONFIG
+// ============================================================
+
+const getBaseUrl = () => {
+  const value =
+    process.env.AIML_URL ||
+    "http://localhost:8000";
+
+  return value.replace(
+    /\/+$/,
+    "",
+  );
+};
+
+
+const getAnalyzeEndpoint = () => {
   const endpoint =
     process.env.AIML_ANALYZE_ENDPOINT ||
-    "/analyze";
+    "/ai/analyze";
 
-  const timeout = Number(
-    process.env.AIML_TIMEOUT || 15000
+  return endpoint.startsWith("/")
+    ? endpoint
+    : `/${endpoint}`;
+};
+
+
+const getTimeout = () => {
+  const value = Number(
+    process.env.AIML_TIMEOUT ||
+      90000,
   );
 
-  if (!baseUrl) {
+  if (
+    !Number.isFinite(value) ||
+    value <= 0
+  ) {
+    return 90000;
+  }
+
+  return value;
+};
+
+
+// ============================================================
+// GEMINI / AIML ANALYSIS
+// ============================================================
+
+const analyzeTask = async (
+  query,
+) => {
+
+  if (
+    !query ||
+    typeof query !== "string" ||
+    !query.trim()
+  ) {
     throw new Error(
-      "AIML_URL is not configured"
+      "Query is required",
     );
   }
 
-  const url = `${baseUrl}${endpoint}`;
+  const url =
+    `${getBaseUrl()}${getAnalyzeEndpoint()}`;
 
   try {
-    const response = await axios.post(
-      url,
-      {
-        query,
-      },
-      {
-        timeout,
-        headers: {
-          "Content-Type": "application/json",
+
+    const response =
+      await axios.post(
+        url,
+        {
+          query: query.trim(),
         },
-      }
-    );
+        {
+          timeout:
+            getTimeout(),
+
+          headers: {
+            "Content-Type":
+              "application/json",
+
+            Accept:
+              "application/json",
+          },
+        },
+      );
 
     return response.data;
+
   } catch (error) {
-    // Python service responded with an error
+
     if (error.response) {
+
       console.error(
         "AI service response error:",
         error.response.status,
-        error.response.data
+        error.response.data,
       );
 
+      const detail =
+        error.response.data?.detail ||
+        error.response.data?.message ||
+        "";
+
       throw new Error(
-        `AI service returned status ${error.response.status}`
+        detail
+          ? `AI service returned status ${error.response.status}: ${detail}`
+          : `AI service returned status ${error.response.status}`,
       );
     }
 
-    // Request timed out
-    if (error.code === "ECONNABORTED") {
-      console.error(
-        "AI service request timed out"
-      );
-
-      throw new Error(
-        "AI service request timed out"
-      );
-    }
-
-    // Python server is not running
     if (
-      error.code === "ECONNREFUSED" ||
-      error.code === "ENOTFOUND"
+      error.code ===
+      "ECONNABORTED"
     ) {
+
+      console.error(
+        "AI service request timed out:",
+        error.message,
+      );
+
+      throw new Error(
+        "AI service request timed out",
+      );
+    }
+
+    if (
+      error.code ===
+        "ECONNREFUSED" ||
+      error.code ===
+        "ENOTFOUND"
+    ) {
+
       console.error(
         "AI service is unreachable:",
-        error.message
+        error.message,
       );
 
       throw new Error(
-        "AI service is unavailable"
+        "AI service is unavailable",
       );
     }
 
     console.error(
       "AI service error:",
-      error.message
+      error.message,
     );
 
     throw new Error(
-      "AI service request failed"
+      "AI service request failed",
     );
   }
 };
+
 
 export default analyzeTask;

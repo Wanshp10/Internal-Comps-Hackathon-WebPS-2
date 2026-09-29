@@ -112,8 +112,9 @@ a:focus-visible {
 }
 
 .app-shell--roadmap {
-  height: 100dvh;
-  overflow: hidden;
+  min-height: 100dvh;
+  height: auto;
+  overflow: visible;
 }
 
 .container {
@@ -1180,9 +1181,9 @@ a:focus-visible {
 
 .roadmap-page {
   width: 100%;
-  height: calc(100dvh - var(--nav-height));
-  min-height: 680px;
-  overflow: hidden;
+  min-height: calc(100dvh - var(--nav-height));
+  height: auto;
+  overflow: visible;
   background:
     radial-gradient(circle at 20% 0%, color-mix(in srgb, var(--soft) 80%, transparent), transparent 32%),
     var(--bg);
@@ -1191,8 +1192,9 @@ a:focus-visible {
 .roadmap {
   display: flex;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  min-height: calc(100dvh - var(--nav-height));
+  height: auto;
+  overflow: visible;
 }
 
 .roadmap__main {
@@ -1327,7 +1329,7 @@ a:focus-visible {
 .roadmap__canvas-shell {
   position: relative;
   flex: 1 1 auto;
-  min-height: 0;
+  min-height: 620px;
   margin: 16px 18px 18px;
   overflow: hidden;
   background: var(--surface);
@@ -1397,7 +1399,7 @@ a:focus-visible {
 
 .roadmap__flow {
   width: 100%;
-  height: 100%;
+  height: 620px;
 }
 
 .roadmap__flow .react-flow {
@@ -1631,7 +1633,7 @@ a:focus-visible {
 
   .roadmap-page {
     min-height: calc(100dvh - 128px);
-    height: calc(100dvh - 128px);
+    height: auto;
   }
 
   .roadmap {
@@ -1653,6 +1655,11 @@ a:focus-visible {
 
   .roadmap__canvas-shell {
     margin: 12px;
+    min-height: 560px;
+  }
+
+  .roadmap__flow {
+    height: 560px;
   }
 
   .step-details {
@@ -1766,7 +1773,12 @@ a:focus-visible {
 
   .roadmap__canvas-shell {
     margin: 8px;
+    min-height: 520px;
     border-radius: 15px;
+  }
+
+  .roadmap__flow {
+    height: 520px;
   }
 
   .roadmap__flow .react-flow__minimap {
